@@ -1,0 +1,12 @@
+.not-page{
+    min-height: 100vh;
+}
+
+.not-page-info h1{
+    font-size: 100px;
+    color: var(--mainColor);
+    font-weight: bolder;
+}
+.not-page-info h3{
+    color: var(--yellow);
+}

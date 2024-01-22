@@ -1,0 +1,70 @@
+.Support{
+    border-top: 4px solid #e8e8e8;
+}
+
+.main-text-1 h1::after{
+        content: '';
+        position: absolute;
+        width: 20%;
+        height: 80%;
+        background-image: url(../../assests/dots.png);
+        left: 50%;
+        transform: translate(-50%);
+        z-index: -1;
+        bottom: -5px;
+}
+
+.main-text-1 h1 {
+    color: var(--mainColor);
+    font-size: 55px !important;
+    font-weight: 500;
+}
+
+.support-car {
+    width: 300px;
+    margin: auto;
+
+}
+
+.support-logo{
+    width: 100px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.card {
+    background-color: #f6f6f6 !important;
+    border: 0 !important;
+    
+}
+
+
+.card img{
+height: 190px;
+object-fit: fill;
+}
+
+.card .btn-Service{
+    /* color: var(--yellow) !important; */
+    color: white !important;
+    background-color: var(--mainColor);
+}
+
+.card .btn-Blog{
+    /* color: var(--yellow) !important; */
+    color: #ffbb29 !important;
+    border: 2px solid #013e6a ;
+    transition:all .3s;
+}
+.card .btn-Blog:hover{
+    /* color: var(--yellow) !important; */
+    color: white !important;
+    background-color: #013e6a;
+}
+
+.card span{
+    font-size: 40px;
+    color: var(--mainColor);
+    font-weight: bold;
+}
+

@@ -1,0 +1,34 @@
+.navCar{
+    color: var(--mainColor) !important;
+}
+.leftLink:hover{
+    color: var(--mainColor) !important;
+    background-color: #ececec;
+    border-radius: 10px;
+    font-size: 15px ;
+}
+
+.leftLink{
+    color: var(--mainColor) !important;
+    margin-left: 15px;
+    font-size: 15px ;
+    border-radius: 10px;
+    padding:10px !important;
+}
+.leftLink.active{
+    background-color: #ececec !important;
+    border-radius: 10px;
+}
+
+.btnNav:hover{
+color: white !important;
+}
+
+.btnColorlogin{
+    border: 1px solid #f5b953 !important;
+    color: black !important;
+    transition: all .2s !important;
+}
+.btnColorlogin:hover{
+    background-color: #f5b953;
+}

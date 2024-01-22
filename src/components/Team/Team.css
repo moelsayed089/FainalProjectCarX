@@ -1,0 +1,14 @@
+.team-text{
+    font-size: 50px;
+    text-align: center;
+    color: var(--mainColor);
+    font-weight: bolder;
+}
+
+.team img{
+    height: 280px !important;
+}
+.btn-team{
+    background-color: var(--mainColor) !important;
+    color: white !important;
+}

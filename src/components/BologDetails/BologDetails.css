@@ -1,0 +1,23 @@
+
+
+
+@media (max-width: 576px) {
+    .BologDetails h2{
+        font-size: 22px ;
+    }
+    .BologDetails p{
+        font-size: 13px;
+    }
+}
+
+/* @media (min-width: 992px) and (max-width: 1200px) {
+
+} */
+@media (min-width: 769px) and (max-width: 1200px) {
+    /* .BologDetails .row{
+        display: flex;
+        flex-direction: column;
+
+    } */
+
+}

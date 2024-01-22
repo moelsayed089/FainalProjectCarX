@@ -1,0 +1,32 @@
+.blog-image img{
+    height: 250px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    object-fit: contain;
+    background-color:#1A1A1A;
+}
+
+.blog-title{
+    padding-top: 5px;
+    color: var(--mainColor);
+}
+
+
+
+.blog-link{
+color:rgb(235, 172, 0)  !important;
+text-decoration: none;
+font-size: 16px;
+font-weight: 700 !important;
+text-align: center !important;
+border: 1px solid black;
+padding: 5px 10px;
+border-radius: 5px;
+text-align: center !important ;
+}
+
+.blog-link i{
+    padding-left: 7px;
+    font-size: 17px;
+}
+

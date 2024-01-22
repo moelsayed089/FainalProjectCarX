@@ -1,0 +1,48 @@
+.home{
+    min-height: calc(100vh - 74px) !important;
+}
+
+
+.home-span{
+    font-size: 60px;
+    color: var(--mainColor);
+}
+.home h1{
+    color: var(--yellow);
+}
+.home h3{
+    color: var(--mainColor);
+    font-weight: 400;
+}
+
+.btncolor{
+    background-color: var(--mainColor) !important;
+    color: white !important;
+}
+
+@media (max-width: 576px) {
+    .home-span {
+            font-size: 50px;
+            color: var(--mainColor);
+        }
+    
+}
+@media (min-width: 992px) and (max-width: 1200px){
+    .home-span {
+            font-size: 60px;
+            color: var(--mainColor);
+            
+        }
+    
+        .home h1 {
+            color: var(--yellow);
+            font-size: 33px;
+        }
+
+                .home h3 {
+                    color: var(--mainColor);
+                    font-weight: 400;
+                    font-size: 25px;
+                }
+
+}

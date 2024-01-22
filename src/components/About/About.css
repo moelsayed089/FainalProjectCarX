@@ -1,0 +1,59 @@
+.main-text h1{
+    color: var(--mainColor);
+    font-size: 55px !important;
+    font-weight: 500;
+}
+.main-text h1::after{
+   content: '';
+   position: absolute;
+   width: 20%;
+   height: 80%;
+   background-image: url(../../assests/dots.png);
+   left: 50%;
+   transform: translate(-50%);
+   z-index: -1;
+   bottom: -5px;
+}
+.about-img::after{
+    content: '';
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        background-image: url(../../assests/dots.png);
+        left: -30px;
+        z-index: -1;
+        bottom: -35px;
+}
+.about-img img{
+    border-radius: 15px !important;
+}
+.about{
+    border-top: 4px solid #e8e8e8;
+}
+
+
+.about-text h2{
+font-size: 40px;
+color: var(--mainColor);
+
+}
+
+.about-text-span{
+color: var(--yellow);
+font-size: 35px;
+}
+
+.about i{
+    background-color: var(--mainColor);
+    height: 30px;
+    color: white;
+    padding: 8px;
+    border-radius:7px;
+    
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+.about-text h2 {
+        font-size: 30px;
+        color: var(--mainColor);
+    }
+}
