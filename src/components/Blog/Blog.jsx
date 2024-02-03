@@ -34,12 +34,16 @@ export default function Blog() {
 
   return (
     <>
-      <h1 className="text-center">Bloggg</h1>
+      <div className="blog-header d-flex justify-content-center align-items-center">
+        <h3 className="text-center text-white">
+          Types of Car Dashboard Symbols
+        </h3>
+      </div>
+
       {data?.data.blogs ? (
         <div className="blog mt-5 mb-5">
           <div className="container  ">
             <div className="row g-3">
-
               {/* =========>> RENDER DATA <<======= */}
 
               {data?.data.blogs.map((product) => {
@@ -47,19 +51,16 @@ export default function Blog() {
                   <div className="col-lg-4 col-xl-3 col-md-6" key={product.id}>
                     <div className="card  w">
                       <div className="blog-image">
-
-
                         {product.image ? (
                           <img
                             className="card-img-top w-100"
                             src={product.image}
                             alt="Card"
-                            
                           />
                         ) : (
                           <img
                             className="card-img-top w-100"
-                            src={require('../../assests/Posts/tire-pressure-light.png')}
+                            src={require("../../assests/Posts/tire-pressure-light.png")}
                             alt="Card"
                           />
                         )}

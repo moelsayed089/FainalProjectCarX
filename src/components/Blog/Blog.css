@@ -30,3 +30,12 @@ text-align: center !important ;
     font-size: 17px;
 }
 
+.blog-header{
+    background-image: url(../../assests/CarSymbols/1.jpg);
+    /* margin-top: 50px; */
+    height: 50vh;
+    width: 100% ;
+    /* object-fit: contain; */
+    background-size: cover ;
+
+}

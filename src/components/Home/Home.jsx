@@ -12,7 +12,7 @@ export default function Home() {
   <div className="home d-flex justify-content-center align-items-center">
     <div className="container ">
       <div className="row align-items-center ">
-        <div className="col-lg-5">
+        <div className="col-lg-6">
           <div className="home-text">
             <h1><span className='home-span'>CAR-X</span> Here To Help</h1>
             <h3>Care for your car, it cares for you</h3>
@@ -21,7 +21,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="col-lg-7">
+        <div className="col-lg-6">
           <div className="home-img">
             <img src={ require('../../assests/Cars/kia-20.png') } className='w-100' alt="home-img" />
             {/* <img src={ require('../../assests/Infographics_ Icons/43025.jpg') } className='w-100' alt="home-img" /> */}
@@ -33,6 +33,6 @@ export default function Home() {
   <About/>
   <Support/>
   <ComeSoon/>
-  <Phone/>
+  {/* <Phone/> */}
   </>
 }

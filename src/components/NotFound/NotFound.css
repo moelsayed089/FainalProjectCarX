@@ -3,10 +3,15 @@
 }
 
 .not-page-info h1{
-    font-size: 100px;
+    font-size: 150px;
     color: var(--mainColor);
     font-weight: bolder;
 }
 .not-page-info h3{
     color: var(--yellow);
+}
+
+.btn-notfound{
+    background-color: var(--mainColor) !important;
+    color: white !important;
 }
