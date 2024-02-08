@@ -5,13 +5,13 @@
     color: var(--mainColor) !important;
     background-color: #ececec;
     border-radius: 10px;
-    font-size: 15px ;
+    font-size: 16px ;
 }
 
-.leftLink{
+.leftLink {
     color: var(--mainColor) !important;
     margin-left: 15px;
-    font-size: 15px ;
+    font-size: 16px ;
     border-radius: 10px;
     padding:10px !important;
 }

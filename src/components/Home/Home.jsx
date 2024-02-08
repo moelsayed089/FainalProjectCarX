@@ -5,7 +5,7 @@ import './Home.css'
 import About from '../About/About'
 import Support from '../Support/Support'
 import ComeSoon from '../ComeSoon/ComeSoon'
-import Phone from '../Phone/Phone'
+
 
 export default function Home() {
   return <>

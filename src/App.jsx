@@ -14,6 +14,7 @@ import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Team from "./components/Team/Team";
 import { QueryClient, QueryClientProvider } from "react-query";
 import BologDetails from "./components/BologDetails/BologDetails";
+import { Symbol } from "./components/Symbole/Symbol";
 
 
 function App() { 
@@ -82,8 +83,19 @@ const myRouts = createBrowserRouter([
       },
 
       {
-        path: "blogdetails/:id",element: (<ProtectedRoute>
+        path: "blogdetails/:id",
+        element: (
+          <ProtectedRoute>
             <BologDetails />
+          </ProtectedRoute>
+        ),
+      },
+
+      {
+        path: "symbol",
+        element: (
+          <ProtectedRoute>
+            <Symbol/>
           </ProtectedRoute>
         ),
       },
