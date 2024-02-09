@@ -33,6 +33,8 @@ export const Symbol = () => {
               placeholder="search for Types of Car Symbols "
               value={searchTerm}
               onChange={handelSearch}
+        
+            
             />
           </div>
         </div>

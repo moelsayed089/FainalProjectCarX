@@ -1,4 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import  { Toaster } from "react-hot-toast";
+
 import MainLayout from "./components/MainLayout/MainLayout";
 import Home from "./components/Home/Home";
 import Service from './components/Service/Service';
@@ -117,6 +120,8 @@ let clientQuery = new QueryClient()
         <AuthProvider>
           <RouterProvider router={myRouts} />
         </AuthProvider>
+
+        <Toaster />
       </QueryClientProvider>
     </>
   );

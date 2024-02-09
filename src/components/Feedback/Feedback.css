@@ -1,0 +1,8 @@
+.feedback{
+
+ border-top: 4px solid #e8e8e8;
+}
+
+textarea {
+    resize: none;
+}

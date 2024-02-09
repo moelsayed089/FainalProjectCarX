@@ -4,9 +4,9 @@ import { teamData } from "../../data";
 export default function Team() {
 return (
     <>
-        <div className="pt-2 team">
+        <main className="pt-2 team">
             <h1 className="team-text">Our Team</h1>
-            <div className="container">
+            <div className="container ">
                 <div className="row g-4 pt-2 pb-5">
                     {teamData.map((team) => (<div key={team.id} className="col-lg-4 col-xl-3 col-md-6">
                             <div className="card px-3 pt-4">
@@ -23,7 +23,7 @@ return (
                     ))}
                 </div>
             </div>
-        </div>
+        </main>
     </>
 );
 }

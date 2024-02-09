@@ -3,7 +3,7 @@ import "./ComeSoon.css";
 import { comeSoonCar } from "../../data";
 export default function ComeSoon() {
     return (
-      <div className=" ComeSoon">
+      <div className=" ComeSoon mb-5">
         <div className="come-title position-relative">
           <h2 className="text-center">Coming Soon</h2>
         </div>

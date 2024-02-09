@@ -5,18 +5,19 @@ import './Home.css'
 import About from '../About/About'
 import Support from '../Support/Support'
 import ComeSoon from '../ComeSoon/ComeSoon'
+import { Feedback } from '../Feedback/Feedback'
 
 
 export default function Home() {
   return <>
   <div className="home d-flex justify-content-center align-items-center">
     <div className="container ">
-      <div className="row align-items-center ">
+      <div className="row align-items-center g-4 ">
         <div className="col-lg-6">
           <div className="home-text">
             <h1><span className='home-span'>CAR-X</span> Here To Help</h1>
             <h3>Care for your car, it cares for you</h3>
-            <p className=' text-muted lh-base '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad amet quod excepturi recusandae quaerat, porro, molestias at rerum, incidunt laudantium ex sed. Nulla dolores itaque illo labore molestiae, recusandae aliquam.</p>
+            <p className='text-muted lh-base '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad amet quod excepturi recusandae quaerat, porro, molestias at rerum, incidunt laudantium ex sed. Nulla dolores itaque illo labore molestiae, recusandae aliquam.</p>
             {/* <button className='btn btncolor py-2 px-4 mb-5 shadow-none'>Explore Services</button> */}
           </div>
         </div>
@@ -33,6 +34,7 @@ export default function Home() {
   <About/>
   <Support/>
   <ComeSoon/>
+  <Feedback/>
   {/* <Phone/> */}
   </>
 }

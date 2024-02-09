@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Bars } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { authContext } from '../../Context/AuthProvider';
+import toast from 'react-hot-toast';
 
 
 
@@ -28,7 +29,10 @@ async function loginUser(values){
     const {data} = await axios.post('http://127.0.0.1:8000/api/auth/login',values)
     // console.log(data);
     if(data.message === 'User Logged In Successfully'){
-      setSuccessMessage('Sign in is Successfull , Wellcome in CAR-X')
+      // setSuccessMessage('Sign in is Successfull , Wellcome in CAR-X')
+      toast.success('Sign in is Successfull,Wellcome in CAR-X' ,{
+        position:'bottom-center',
+      })
     }
 
     localStorage.setItem( 'token' , data.token)
@@ -44,12 +48,15 @@ async function loginUser(values){
     // console.log(error.response.data.message);
     let errorResponse = error.response.data.message;
     if(errorResponse ==="Email & Password does not match with our record." ){
-    setErrorMessage("Email or Password is not valid")
+    // setErrorMessage("Email or Password is not valid")
+    toast.error("Email or Password is not valid",{
+      position:'bottom-center',
+    });
     }
     
   }
 
-  setIsLoading(false)
+  setIsLoading(false) 
 }
 
 
@@ -80,42 +87,86 @@ let formObject = useFormik({
 
 
 
-
-  return <>
-    <div className="login mt-5">
-      <div className="container ">
-        <div className="login-about d-flex  justify-content-lg-between align-items-lg-center">
+  return (
+    <>
+      <div className="login mt-3">
+        <div className="container ">
+          <div className="login-about d-flex  justify-content-lg-between align-items-lg-center">
             <div className="text-log ">
               <h1>
                 Welcome Back.
                 <br />
-                <span className='Signin'>Sign In</span> Now!
+                <span className="Signin">Sign In</span> Now!
               </h1>
             </div>
             <div className="img-log">
-              <img src={ require('../../assests/Infographics_ Icons/8227.jpg') } className='w-100' alt="" />
+              <img
+                src={require("../../assests/Infographics_ Icons/8227.jpg")}
+                className="w-100"
+                alt=""
+              />
             </div>
-        </div>
+          </div>
 
-        <div className="log-form mt-3">
-          <form onSubmit = {formObject.handleSubmit} >
-            <label className='lablelog' htmlFor="email">Email:</label>
-            <input onBlur={formObject.handleBlur} value={formObject.values.email} onChange={formObject.handleChange} id='email' type="text" className=' form-control shadow-none mb-3 py-2 inputlog' />
-            {formObject.errors.email && formObject.touched.email ? <div className=' alert alert-danger'>{formObject.errors.email}</div>: ""}
+          <div className="log-form  ">
+            <form onSubmit={formObject.handleSubmit}>
+              <label className="lablelog" htmlFor="email">
+                Email:
+              </label>
+              <input
+                onBlur={formObject.handleBlur}
+                value={formObject.values.email}
+                onChange={formObject.handleChange}
+                id="email"
+                type="text"
+                className=" form-control shadow-none mb-3 py-2 inputlog"
+              />
+              {formObject.errors.email && formObject.touched.email ? (
+                <div className=" alert alert-danger">
+                  {formObject.errors.email}
+                </div>
+              ) : (
+                ""
+              )}
 
-          
-            <label className='lablelog' htmlFor="password">Password:</label>
-            <input onBlur={formObject.handleBlur} value={formObject.values.password} onChange={formObject.handleChange} id='password' type="password" className=' form-control shadow-none mb-3 py-2 inputlog' />
-            {formObject.errors.password && formObject.touched.password ? <div className=' alert alert-danger'>{formObject.errors.password}</div>: ""}
-            
-            {errorMessage ? <div className='alert alert-danger'>{ errorMessage }</div>: ""}
-            {successMessage ? <div className='alert  alert-success'>{ successMessage }</div>: ""}
-            
-            
-            <button disabled = {formObject.isValid === false || formObject.dirty === false} type='submit' className='btn btnlog py-3 px-4  shadow-none w-100' >
-              
-              
-              {isLoading ? <div className=' d-flex justify-content-center'>
+              <label className="lablelog" htmlFor="password">
+                Password:
+              </label>
+              <input
+                onBlur={formObject.handleBlur}
+                value={formObject.values.password}
+                onChange={formObject.handleChange}
+                id="password"
+                type="password"
+                className=" form-control shadow-none mb-3 py-2 inputlog"
+              />
+              {formObject.errors.password && formObject.touched.password ? (
+                <div className=" alert alert-danger">
+                  {formObject.errors.password}
+                </div>
+              ) : (
+                ""
+              )}
+
+              {errorMessage ? (
+                <div className="alert alert-danger">{errorMessage}</div>
+              ) : (
+                ""
+              )}
+              {successMessage ? (
+                <div className="alert  alert-success">{successMessage}</div>
+              ) : (
+                ""
+              )}
+
+              <button
+                disabled={
+                  formObject.isValid === false || formObject.dirty === false
+                }
+                type="submit"
+                className="btn btnlog py-3 px-4  shadow-none w-100"
+              >
+                {isLoading ? <div className=' d-flex justify-content-center'>
                 <Bars 
           height="30"
           width="60"
@@ -126,13 +177,16 @@ let formObject = useFormik({
           visible={true}
                         />
               </div> : "Sign in"}
-              
+
+
+  
               </button>
-
-
-          </form>
+              
+            </form>
+            
+          </div>
         </div>
       </div>
-    </div>
-  </>
+    </>
+  );
 }

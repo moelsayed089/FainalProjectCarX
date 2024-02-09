@@ -4,6 +4,7 @@ import { useFormik } from 'formik'
 import { Bars } from 'react-loader-spinner';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 
 export default function Register() {
@@ -26,7 +27,10 @@ const [successMessage , setSuccessMessage] = useState(null)
     // console.log(data.token)
 
     if(data.message === 'User Created Successfully'){
-      setSuccessMessage('Account has created successfully')
+      // setSuccessMessage('Account has created successfully')
+      toast.success("Account has created successfully", {
+        position: "bottom-center",
+      });
       setTimeout(() => {
         navigate('/login')
       },1000)
@@ -36,7 +40,10 @@ const [successMessage , setSuccessMessage] = useState(null)
   catch(error){
     let errorRes =error.response.data.errors.email.join()
     // console.log(errorRes);
-    setErrorMessage(errorRes)
+    // setErrorMessage(errorRes)
+    toast.error(errorRes, {
+      position: "bottom-center",
+    });
   }
 
   setIsLoading(false)
@@ -87,7 +94,7 @@ const [successMessage , setSuccessMessage] = useState(null)
 
 
   return <>
-<div className="register mt-5">
+<div className="register mt-3">
   <div className="container">
     <div className="reg-text">
       <h1>Hello! <span className='sign-up'>Sign UP</span>
@@ -96,7 +103,7 @@ const [successMessage , setSuccessMessage] = useState(null)
       </h1>
     </div>
 
-    <div className='mt-5 position-relative '>
+    <div className='mt-3 position-relative '>
 
       <div className='regImg  position-absolute ' >
         <img src={require('../../assests/Infographics_ Icons/mechanic.png')} className='w-100' alt="" />

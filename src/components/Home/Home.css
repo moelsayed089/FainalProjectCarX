@@ -9,6 +9,7 @@
 }
 .home h1{
     color: var(--yellow);
+    font-weight: 700;
 }
 .home h3{
     color: var(--mainColor);
