@@ -3,9 +3,10 @@ import './Feedback.css'
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Bars } from 'react-loader-spinner';
 import { authContext } from '../../Context/AuthProvider';
+import './Feedback.css'
 export const Feedback = () => {
 
 
@@ -22,7 +23,7 @@ export const Feedback = () => {
 
 
     const [errorMessage, setErrorMessage] = useState(null);
-    const [successMessage, setSuccessMessage] = useState(null);
+
 
     async function sumbitFeedback(values, { resetForm }) {
         setIsLoading(true);
@@ -41,13 +42,7 @@ export const Feedback = () => {
                 });
             }
         } catch (error) {
-            // let errorRes = error.response.data.errors.email.join();
-            // // console.log(errorRes);
-            // // setErrorMessage(errorRes)
-            // toast.error(errorRes, {
-            //     position: "bottom-center",
-            // });
-            console.log(error);
+            toast.error(error);
         }
 
         setIsLoading(false);
@@ -120,6 +115,7 @@ export const Feedback = () => {
                             placeholder="Enter Your feedback "
                             rows={10}
                             cols={10}
+                            
                         />
                         {formObject.errors.description &&
                             formObject.touched.description ? (

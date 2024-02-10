@@ -33,12 +33,12 @@ export const Symbol = () => {
               placeholder="search for Types of Car Symbols "
               value={searchTerm}
               onChange={handelSearch}
-        
+             
             
             />
           </div>
         </div>
-        <div className="row mt-5">
+        <div className="row mt-5 mb-5">
           {UnknownSymbols.filter((item) => {
             return searchTerm.toLowerCase() === ""
               ? item

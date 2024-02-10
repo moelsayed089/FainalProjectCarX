@@ -22,41 +22,41 @@ const {setToken} = useContext(authContext)
 
 const navigate = useNavigate()
 
-async function loginUser(values){
-  setIsLoading(true)
+async function loginUser(values, { resetForm }) {
+  setIsLoading(true);
   // setErrorMessage(null)
-  try{
-    const {data} = await axios.post('http://127.0.0.1:8000/api/auth/login',values)
+  try {
+    const { data } = await axios.post(
+      "http://127.0.0.1:8000/api/auth/login",
+      values
+    );
     // console.log(data);
-    if(data.message === 'User Logged In Successfully'){
+    if (data.message === "User Logged In Successfully") {
       // setSuccessMessage('Sign in is Successfull , Wellcome in CAR-X')
-      toast.success('Sign in is Successfull,Wellcome in CAR-X' ,{
-        position:'bottom-center',
-      })
+      toast.success("Sign in is Successfull,Wellcome in CAR-X", {
+        position: "bottom-center",
+      });
     }
 
-    localStorage.setItem( 'token' , data.token)
-    setToken(data.token)
+    localStorage.setItem("token", data.token);
+    setToken(data.token);
 
-
-    setTimeout(() =>{
-      navigate('/home')
-    },1000)
-
-  }
-  catch(error){
+    setTimeout(() => {
+      navigate("/home");
+    }, 1000);
+  } catch (error) {
     // console.log(error.response.data.message);
     let errorResponse = error.response.data.message;
-    if(errorResponse ==="Email & Password does not match with our record." ){
-    // setErrorMessage("Email or Password is not valid")
-    toast.error("Email or Password is not valid",{
-      position:'bottom-center',
-    });
+    if (errorResponse === "Email & Password does not match with our record.") {
+      // setErrorMessage("Email or Password is not valid")
+      toast.error("Email or Password is not valid", {
+        position: "bottom-center",
+      });
     }
-    
   }
 
-  setIsLoading(false) 
+  setIsLoading(false);
+  resetForm()
 }
 
 

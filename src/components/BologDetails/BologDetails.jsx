@@ -7,7 +7,7 @@ import './BologDetails.css'
 
 export default function BologDetails() {
   let { id } = useParams();
-  console.log(id);
+
 
   function getDetailsBlog() {
     return axios.get(`http://127.0.0.1:8000/api/blogs/${id}`);
@@ -17,7 +17,7 @@ export default function BologDetails() {
 
   const datax = data?.data.blogs
 
-  console.log(datax)
+
 
   if (isLoading) {
     return (
@@ -39,7 +39,7 @@ export default function BologDetails() {
      
         <main className="BologDetails">
           <div className="container mt-5 ">
-                <div className="row p-5">
+                <div className="row p-1">
                   <div className="col-lg-4 col-md-6">
                     <div className="img-card mb-4">
                       <img

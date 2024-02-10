@@ -12,7 +12,7 @@ const navigate = useNavigate()
 function logout(){
   localStorage.removeItem('token')
   setToken(null)
-  navigate('/login')
+  navigate('/home')
 }
 
   return (

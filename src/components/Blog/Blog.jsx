@@ -34,15 +34,15 @@ export default function Blog() {
 
   return (
     <>
-      <div className="blog-header d-flex justify-content-center align-items-center">
-        <h3 className="text-center text-white">
-          Types of Car Dashboard Symbols
-        </h3>
+      <div className="blog-header  ">
+        <div className="main-text py-3">
+          <h1 className=" text-center position-relative">Blog of Car</h1>
+        </div>
       </div>
 
       {data?.data.blogs ? (
-        <div className="blog mt-5 mb-5">
-          <div className="container  ">
+        <div className="blog mt-5 mb-5 ">
+          <div className="container  col-9">
             <div className="row g-3">
               {/* =========>> RENDER DATA <<======= */}
 
