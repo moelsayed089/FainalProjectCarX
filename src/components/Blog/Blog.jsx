@@ -69,6 +69,7 @@ export default function Blog() {
                         <h3 className="card-title blog-title mb-4   fw-bold ">
                           {product.title.split(" ").slice(0, 4).join(" ")}
                         </h3>
+                        <p></p>
                         <Link
                           className="blog-link "
                           to={`/blogdetails/${product.id}`}

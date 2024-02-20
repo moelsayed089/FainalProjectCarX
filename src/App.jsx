@@ -36,10 +36,8 @@ const myRouts = createBrowserRouter([
             <Service />
           </ProtectedRoute>
         ),
+        errorElement: <h3>looooo</h3>,
       },
-
-      
-
 
       {
         path: "profile",
@@ -48,6 +46,7 @@ const myRouts = createBrowserRouter([
             <Profile />
           </ProtectedRoute>
         ),
+        errorElement: <h3>looooo</h3>,
       },
 
       {
@@ -81,7 +80,7 @@ const myRouts = createBrowserRouter([
         path: "symbol",
         element: (
           <ProtectedRoute>
-            <Symbol/>
+            <Symbol />
           </ProtectedRoute>
         ),
       },

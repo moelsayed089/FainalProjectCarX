@@ -54,12 +54,7 @@ function logout(){
                       Services AI
                     </NavLink>
                   </li>
-                  {/* <li className="nav-item">
-          <Link className="nav-link leftLink" to="/problemsolution">Q & A</Link>
-        </li> */}
-                  {/* <li className="nav-item">
-          <Link className="nav-link leftLink" to="/todoapp">To Do App</Link>
-        </li> */}
+                
                   <li className="nav-item">
                     <NavLink className="nav-link leftLink" to="/symbol">
                       Car Symbol
@@ -93,13 +88,9 @@ function logout(){
 
                   <li className="nav-item">
                     <div className="flex justify-content-center align-items-center">
-                      {/* <img
-                        src={require("../../assests/Memoji/emojisky.com-23190282.png")}
-                        className="  imaagg "
-                        alt=""
-                      /> */}
+                  
                       <NavLink className="nav-link leftLink" to="/profile">
-                        <i class="fa-solid fa-user"></i>
+                        <i className="fa-solid fa-user"></i>
                         {userData.name}
                       </NavLink>
                     </div>

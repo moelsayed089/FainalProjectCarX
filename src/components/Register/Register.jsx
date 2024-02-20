@@ -13,7 +13,7 @@ export default function Register() {
   const navigate = useNavigate();
 
   const [errorMessage, setErrorMessage] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(null);
+  // const [successMessage, setSuccessMessage] = useState(null);
 
   async function registerNewUser(values, { resetForm }) {
     setIsLoading(true);
@@ -223,11 +223,13 @@ export default function Register() {
               ) : (
                 ""
               )}
-              {successMessage ? (
+
+
+              {/* {successMessage ? (
                 <div className=" alert  alert-success">{successMessage}</div>
               ) : (
                 ""
-              )}
+              )} */}
 
               <button
                 disabled={
