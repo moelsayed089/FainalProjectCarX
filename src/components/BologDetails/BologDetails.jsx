@@ -1,8 +1,45 @@
-
-import './BologDetails.css'
+import axios from "axios";
+import React from "react";
+import { Puff } from "react-loader-spinner";
+import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
+import "./BologDetails.css";
 
 export default function BologDetails() {
-  
+  let { id } = useParams();
+  // console.log(id)
+  function getDetailsBlog() {
+    return axios.get(`http://127.0.0.1:8000/api/blogs/${id}`);
+  }
+  let { data,isLoading } = useQuery("blogDetails", getDetailsBlog);
+// console.log(isLoading)
+// console.log(data.data.blogs)
+// console.log(error)
+// console.log(isLoading)
+
+
+const blogDetails = data?.data.blogs
+
+
+
+
+
+  if (isLoading) {
+    return (
+      <div className="vh-100 d-flex justify-content-center align-items-center">
+        <Puff
+          visible={true}
+          height="80"
+          width="80"
+          color="#013e6a"
+          ariaLabel="puff-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    );
+  }
+
   return (
     <>
       <main className="BologDetails">
@@ -11,33 +48,22 @@ export default function BologDetails() {
             <div className="col-lg-4 col-md-6">
               <div className="img-card mb-4">
                 <img
-                  src={require("../../assests/Posts/tire-pressure-light.png")}
-                  // src={i}
+                  // src={require("../../assests/Posts/tire-pressure-light.png")}
+                  src={blogDetails.image}
                   className="w-100 shadow-sm rounded-3"
                   alt="iamge_symobol"
                 />
               </div>
             </div>
-
             <div className="col-lg-8 col-md-12 ">
               <div className="blog-info">
-                <h2 className="text- mb-2">;ds;ds;ds</h2>
+                <h2 className="text- mb-2">{blogDetails.title}</h2>
                 <h5 className="text-warning">What It Means:</h5>
-                <p className="text-muted">
-                  Also known as the Tire Pressure Monitoring System (TPMS)
-                  symbol, this image signals an issue with your tire pressure or
-                  the TPMS. If the TPMS symbol is solid, then the pressure in
-                  one or more of your tires is too low or too high. If the TPMS
-                  symbol flashes for 60-90 seconds when you turn on your vehicle
-                  and then stays illuminated, even if your tires are properly
-                  inflated, then something is wrong with your TPMS sensors.
-                </p>
-
+                <p className="text-muted">{blogDetails.description}</p>
                 <h5 className=" text-warning"> What To Do:</h5>
-
-                <p className="text-muted">
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ducimus nam eum odit error aperiam, numquam quo repudiandae, eligendi, vero distinctio expedita veniam similique modi quos tempora mollitia incidunt quas?
-                </p>
+                <p className="text-muted">{blogDetails.description2}</p>
+                <h5 className=" text-warning"> how to solll Do:</h5>
+                <p className="text-muted">{blogDetails.description3}</p>
               </div>
             </div>
           </div>

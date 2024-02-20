@@ -22,7 +22,7 @@ export const Fixed = () => {
                     <div className="card">
                       <div className="blog-imge overflow-hidden ">
                         <img
-                          src={require("../../assests/CarSymbols/3.jpg")}
+                          src={require("../../assests/CarSymbols/fix1.jpg")}
                           className="card-img-top w-100 h-100"
                           alt="..."
                         />
@@ -54,7 +54,7 @@ export const Fixed = () => {
                     <div className="card">
                       <div className="blog-imge overflow-hidden ">
                         <img
-                          src={require("../../assests/CarSymbols/3.jpg")}
+                          src={require("../../assests/CarSymbols/fix1.jpg")}
                           className="card-img-top w-100 h-100"
                           alt="..."
                         />
@@ -86,7 +86,7 @@ export const Fixed = () => {
                     <div className="card">
                       <div className="blog-imge overflow-hidden ">
                         <img
-                          src={require("../../assests/CarSymbols/3.jpg")}
+                          src={require("../../assests/CarSymbols/fix1.jpg")}
                           className="card-img-top w-100 h-100"
                           alt="..."
                         />

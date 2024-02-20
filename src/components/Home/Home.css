@@ -4,12 +4,13 @@
 
 
 .home-span{
-    font-size: 60px;
+    font-size: 65px;
     color: var(--mainColor);
 }
 .home h1{
     color: var(--yellow);
     font-weight: 700;
+
 }
 .home h3{
     color: var(--mainColor);

@@ -19,7 +19,7 @@ export default function Home() {
           <div className="home-text">
             <h1><span className='home-span'>CAR-X</span> Here To Help</h1>
             <h3>Care for your car, it cares for you</h3>
-            <p className='text-muted lh-base '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad amet quod excepturi recusandae quaerat, porro, molestias at rerum, incidunt laudantium ex sed. Nulla dolores itaque illo labore molestiae, recusandae aliquam.</p>
+            <p className='text-muted lh-base '>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam tempora similique quia vitae cum aut magnam eveniet deserunt. Voluptatum maiores, debitis rem tempore molestiae totam porro! Perferendis tempora delectus praesentiumz</p>
 
           </div>
         </div>
