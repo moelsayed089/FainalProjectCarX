@@ -1,0 +1,35 @@
+.fixed-span{
+    font-size: 16px !important;
+}
+ .blog-imge img {
+    width: 100%;
+    transition: all .5s ease-in-out;
+}
+
+ .blog-imge:hover img {
+    transform: scale(1.2, 1.1);
+}
+
+
+
+
+ .blog-info {
+    text-decoration: none;
+    color: #4c4b4b;
+}
+
+.blog-info::after {
+    content: '';
+    position: absolute;
+    width: 85px;
+    height: 1.5px;
+    bottom: -20%;
+    left: 0%;
+    background-color: rgb(34, 34, 34);
+}
+.blog-info:hover{
+    color: #4c4b4b;
+}
+
+
+

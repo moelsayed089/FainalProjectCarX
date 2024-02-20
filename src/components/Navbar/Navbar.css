@@ -35,3 +35,8 @@ color: white !important;
 .btnColorlogin:hover{
     background-color: #f5b953;
 }
+
+.fa-user{
+    font-size: 25px;
+    margin-right: 10px;
+}

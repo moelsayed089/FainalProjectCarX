@@ -5,13 +5,15 @@ import { authContext } from '../../Context/AuthProvider'
 
 export default function Navbar() {
 
-const {token,setToken} = useContext(authContext)
+const {token,setToken ,userData,setUserData } = useContext(authContext)
 
 const navigate = useNavigate()
 
 function logout(){
   localStorage.removeItem('token')
+  localStorage.removeItem("useData");
   setToken(null)
+  setUserData({})
   navigate('/home')
 }
 
@@ -90,9 +92,17 @@ function logout(){
                   </li>
 
                   <li className="nav-item">
-                    <NavLink className="nav-link leftLink" to="/profile">
-                      Profile
-                    </NavLink>
+                    <div className="flex justify-content-center align-items-center">
+                      {/* <img
+                        src={require("../../assests/Memoji/emojisky.com-23190282.png")}
+                        className="  imaagg "
+                        alt=""
+                      /> */}
+                      <NavLink className="nav-link leftLink" to="/profile">
+                        <i class="fa-solid fa-user"></i>
+                        {userData.name}
+                      </NavLink>
+                    </div>
                   </li>
                 </>
               ) : (

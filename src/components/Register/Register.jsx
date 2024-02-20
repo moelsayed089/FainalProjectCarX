@@ -18,17 +18,22 @@ export default function Register() {
   async function registerNewUser(values, { resetForm }) {
     setIsLoading(true);
     setErrorMessage(null);
+    console.log(values)
 
     // console.log('sending..........');
 
     try {
       const { data } = await axios.post(
-        "http://127.0.0.1:8000/api/auth/register",
+        "http://127.0.0.1:8000/api/register",
         values
       );
-      // console.log(data.token)
+      console.log(data.data)
+      console.log(data.message)
+      console.log(data.data.token)
+      console.log(data.data.name)
+      console.log(data.data.email)
 
-      if (data.message === "User Created Successfully") {
+      if (data.message === "User register successfully.") {
         // setSuccessMessage('Account has created successfully')
         toast.success("Account has created successfully", {
           position: "bottom-center",
@@ -38,7 +43,8 @@ export default function Register() {
         }, 1000);
       }
     } catch (error) {
-      let errorRes = error.response.data.errors.email.join();
+      let errorRes = error.response.data.data.email.join()
+      // console.log(error)
       // console.log(errorRes);
       // setErrorMessage(errorRes)
       toast.error(errorRes, {
@@ -47,7 +53,7 @@ export default function Register() {
     }
 
     setIsLoading(false);
-    resetForm();
+    // resetForm();
   }
 
   const formObject = useFormik({
@@ -70,8 +76,7 @@ export default function Register() {
       }
 
       if (
-        values.email.includes("@") === false ||
-        values.email.includes(".") === false
+        values.email.includes("@") === false || values.email.includes(".") === false
       ) {
         errors.email = "Email not valid must be contain (@) and (.)";
       }

@@ -17,7 +17,7 @@ const [successMessage,setSuccessMessage] = useState(null)
 const [isLoading,setIsLoading]=useState(null)
 
 
-const {setToken} = useContext(authContext)
+const { setToken, setUserData } = useContext(authContext);
 
 
 const navigate = useNavigate()
@@ -27,27 +27,31 @@ async function loginUser(values, { resetForm }) {
   // setErrorMessage(null)
   try {
     const { data } = await axios.post(
-      "http://127.0.0.1:8000/api/auth/login",
+      "http://127.0.0.1:8000/api/login",
       values
     );
     // console.log(data);
-    if (data.message === "User Logged In Successfully") {
+    if (data.message === "User login successfully.") {
       // setSuccessMessage('Sign in is Successfull , Wellcome in CAR-X')
       toast.success("Sign in is Successfull,Wellcome in CAR-X", {
         position: "bottom-center",
       });
     }
+console.log(data.data.token);
+    localStorage.setItem("token", data.data.token);
+    setToken(data.data.token);
 
-    localStorage.setItem("token", data.token);
-    setToken(data.token);
-
+    localStorage.setItem("useData", JSON.stringify(data.data));
+    setUserData(data.data)
+  
     setTimeout(() => {
       navigate("/home");
     }, 1000);
   } catch (error) {
     // console.log(error.response.data.message);
     let errorResponse = error.response.data.message;
-    if (errorResponse === "Email & Password does not match with our record.") {
+    console.log(errorResponse);
+    if (errorResponse === "Unauthorised.") {
       // setErrorMessage("Email or Password is not valid")
       toast.error("Email or Password is not valid", {
         position: "bottom-center",
@@ -56,7 +60,7 @@ async function loginUser(values, { resetForm }) {
   }
 
   setIsLoading(false);
-  resetForm()
+  // resetForm()
 }
 
 

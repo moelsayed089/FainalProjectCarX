@@ -6,6 +6,8 @@ import About from '../About/About'
 import Support from '../Support/Support'
 import ComeSoon from '../ComeSoon/ComeSoon'
 import { Feedback } from '../Feedback/Feedback'
+import { Footer } from '../Footer/Footer'
+import { Fixed } from '../Fixed/Fixed'
 
 
 export default function Home() {
@@ -34,7 +36,10 @@ export default function Home() {
   <About/>
   <Support/>
   <ComeSoon/>
+  <Fixed/>
   <Feedback/>
+  <Footer/>
+
 
   </>
 }
