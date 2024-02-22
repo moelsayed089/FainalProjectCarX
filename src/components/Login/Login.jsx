@@ -13,7 +13,7 @@ import toast from 'react-hot-toast';
 export default function Login() {
 
 const [errorMessage,setErrorMessage] = useState(null)
-const [successMessage,setSuccessMessage] = useState(null)
+// const [successMessage,setSuccessMessage] = useState(null)
 const [isLoading,setIsLoading]=useState(null)
 
 
@@ -37,7 +37,7 @@ async function loginUser(values, { resetForm }) {
         position: "bottom-center",
       });
     }
-console.log(data.data.token);
+// console.log(data.data.token);
     localStorage.setItem("token", data.data.token);
     setToken(data.data.token);
 
@@ -50,7 +50,7 @@ console.log(data.data.token);
   } catch (error) {
     // console.log(error.response.data.message);
     let errorResponse = error.response.data.message;
-    console.log(errorResponse);
+    // console.log(errorResponse);
     if (errorResponse === "Unauthorised.") {
       // setErrorMessage("Email or Password is not valid")
       toast.error("Email or Password is not valid", {
@@ -60,7 +60,7 @@ console.log(data.data.token);
   }
 
   setIsLoading(false);
-  // resetForm()
+  resetForm()
 }
 
 
@@ -157,11 +157,13 @@ let formObject = useFormik({
               ) : (
                 ""
               )}
-              {successMessage ? (
+
+
+              {/* {successMessage ? (
                 <div className="alert  alert-success">{successMessage}</div>
               ) : (
                 ""
-              )}
+              )} */}
 
               <button
                 disabled={

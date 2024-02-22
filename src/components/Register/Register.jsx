@@ -18,7 +18,7 @@ export default function Register() {
   async function registerNewUser(values, { resetForm }) {
     setIsLoading(true);
     setErrorMessage(null);
-    console.log(values)
+    // console.log(values)
 
     // console.log('sending..........');
 
@@ -27,11 +27,11 @@ export default function Register() {
         "http://127.0.0.1:8000/api/register",
         values
       );
-      console.log(data.data)
-      console.log(data.message)
-      console.log(data.data.token)
-      console.log(data.data.name)
-      console.log(data.data.email)
+      // console.log(data.data)
+      // console.log(data.message)
+      // console.log(data.data.token)
+      // console.log(data.data.name)
+      // console.log(data.data.email)
 
       if (data.message === "User register successfully.") {
         // setSuccessMessage('Account has created successfully')
@@ -53,7 +53,7 @@ export default function Register() {
     }
 
     setIsLoading(false);
-    // resetForm();
+    resetForm();
   }
 
   const formObject = useFormik({

@@ -91,7 +91,7 @@ function logout(){
                   
                       <NavLink className="nav-link leftLink" to="/profile">
                         <i className="fa-solid fa-user"></i>
-                        {userData.name}
+                        {userData?.name}
                       </NavLink>
                     </div>
                   </li>

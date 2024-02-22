@@ -5,18 +5,17 @@ export const authContext = createContext()
 
 export default function AuthProvider({children}) {
 
-  console.log(children)
-const [token,setToken]=useState(null)
-const [userData, setUserData] = useState({});
 
-console.log(token)
-console.log(userData)
+const [token,setToken]=useState(null)
+const [userData, setUserData] = useState(null);
+
+// console.log(token)
+// console.log(userData)
 
 // handel user refresh 
 useEffect(()=>{
-if (localStorage.getItem("useData") !== '') {
-
-  setUserData(JSON.parse(localStorage.getItem("useData")));
+if (localStorage.getItem("useData") !== null) {
+    setUserData(JSON.parse(localStorage.getItem("useData")));
 }
 
 if (localStorage.getItem("token") !== null) {
