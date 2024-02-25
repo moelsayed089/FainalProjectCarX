@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import ProfileStyle from './Profile.module.css'
 import { authContext } from '../../Context/AuthProvider';
 import { Puff } from 'react-loader-spinner';

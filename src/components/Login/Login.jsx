@@ -12,7 +12,7 @@ import toast from 'react-hot-toast';
 
 export default function Login() {
 
-const [errorMessage,setErrorMessage] = useState(null)
+// const [errorMessage,setErrorMessage] = useState(null)
 // const [successMessage,setSuccessMessage] = useState(null)
 const [isLoading,setIsLoading]=useState(null)
 
@@ -34,7 +34,7 @@ async function loginUser(values, { resetForm }) {
     if (data.message === "User login successfully.") {
       // setSuccessMessage('Sign in is Successfull , Wellcome in CAR-X')
       toast.success("Sign in is Successfull,Wellcome in CAR-X", {
-        position: "bottom-center",
+        position: "bottom-right",
       });
     }
 // console.log(data.data.token);
@@ -54,7 +54,7 @@ async function loginUser(values, { resetForm }) {
     if (errorResponse === "Unauthorised.") {
       // setErrorMessage("Email or Password is not valid")
       toast.error("Email or Password is not valid", {
-        position: "bottom-center",
+        position: "bottom-right",
       });
     }
   }
@@ -73,7 +73,7 @@ let formObject = useFormik({
   
   validate : (values) => {
 
-    setErrorMessage(null)
+    // setErrorMessage(null)
 
     const errors = {};
 
@@ -114,50 +114,53 @@ let formObject = useFormik({
 
           <div className="log-form  ">
             <form onSubmit={formObject.handleSubmit}>
-              <label className="lablelog" htmlFor="email">
-                Email:
-              </label>
-              <input
-                onBlur={formObject.handleBlur}
-                value={formObject.values.email}
-                onChange={formObject.handleChange}
-                id="email"
-                type="text"
-                className=" form-control shadow-none mb-3 py-2 inputlog"
-              />
-              {formObject.errors.email && formObject.touched.email ? (
-                <div className=" alert alert-danger">
-                  {formObject.errors.email}
-                </div>
-              ) : (
-                ""
-              )}
+              <div className="mb-2">
+                <label className="lablelog" htmlFor="email">
+                  Email:
+                </label>
+                <input
+                  onBlur={formObject.handleBlur}
+                  value={formObject.values.email}
+                  onChange={formObject.handleChange}
+                  id="email"
+                  type="text"
+                  className=" form-control shadow-none mb-1 py-2 inputlog"
+                />
+                {formObject.errors.email && formObject.touched.email ? (
+                  <span className="text-danger fw-bold">
+                    {formObject.errors.email}
+                  </span>
+                ) : (
+                  ""
+                )}
+              </div>
 
-              <label className="lablelog" htmlFor="password">
-                Password:
-              </label>
-              <input
-                onBlur={formObject.handleBlur}
-                value={formObject.values.password}
-                onChange={formObject.handleChange}
-                id="password"
-                type="password"
-                className=" form-control shadow-none mb-3 py-2 inputlog"
-              />
-              {formObject.errors.password && formObject.touched.password ? (
-                <div className=" alert alert-danger">
-                  {formObject.errors.password}
-                </div>
-              ) : (
-                ""
-              )}
+              <div className="mb-2">
+                <label className="lablelog" htmlFor="password">
+                  Password:
+                </label>
+                <input
+                  onBlur={formObject.handleBlur}
+                  value={formObject.values.password}
+                  onChange={formObject.handleChange}
+                  id="password"
+                  type="password"
+                  className=" form-control shadow-none mb-1 py-2 inputlog"
+                />
+                {formObject.errors.password && formObject.touched.password ? (
+                  <span className="text-danger fw-bold">
+                    {formObject.errors.password}
+                  </span>
+                ) : (
+                  ""
+                )}
+              </div>
 
-              {errorMessage ? (
+              {/* {errorMessage ? (
                 <div className="alert alert-danger">{errorMessage}</div>
               ) : (
                 ""
-              )}
-
+              )} */}
 
               {/* {successMessage ? (
                 <div className="alert  alert-success">{successMessage}</div>
@@ -172,24 +175,23 @@ let formObject = useFormik({
                 type="submit"
                 className="btn btnlog py-3 px-4  shadow-none w-100"
               >
-                {isLoading ? <div className=' d-flex justify-content-center'>
-                <Bars 
-          height="30"
-          width="60"
-          color="#fff"
-          ariaLabel="bars-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-                        />
-              </div> : "Sign in"}
-
-
-  
+                {isLoading ? (
+                  <div className=" d-flex justify-content-center">
+                    <Bars
+                      height="30"
+                      width="60"
+                      color="#fff"
+                      ariaLabel="bars-loading"
+                      wrapperStyle={{}}
+                      wrapperClass=""
+                      visible={true}
+                    />
+                  </div>
+                ) : (
+                  "Sign in"
+                )}
               </button>
-              
             </form>
-            
           </div>
         </div>
       </div>
