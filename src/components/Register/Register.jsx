@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
-import './Register.css'
-import { useFormik } from 'formik'
-import { Bars } from 'react-loader-spinner';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
-
+import React, { useState } from "react";
+import "./Register.css";
+import { useFormik } from "formik";
+import { Bars } from "react-loader-spinner";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function Register() {
   const [isLoading, setIsLoading] = useState(null);
@@ -43,7 +42,7 @@ export default function Register() {
         }, 1000);
       }
     } catch (error) {
-      let errorRes = error.response.data.data.email.join()
+      let errorRes = error.response.data.data.email.join();
       // console.log(error)
       // console.log(errorRes);
       // setErrorMessage(errorRes)
@@ -76,7 +75,8 @@ export default function Register() {
       }
 
       if (
-        values.email.includes("@") === false || values.email.includes(".") === false
+        values.email.includes("@") === false ||
+        values.email.includes(".") === false
       ) {
         errors.email = "Email not valid must be contain (@) and (.)";
       }

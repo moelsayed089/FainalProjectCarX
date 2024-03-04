@@ -6,11 +6,15 @@
 /* .symbol-info span{
     color: var(--yellow);
 } */
-p {
+.symbol-text p {
     max-width: 80%;
 
 }
 
+.symbol-info p {
+    max-width: 80%;
+
+}
 
 
 .symbol-info input:focus {

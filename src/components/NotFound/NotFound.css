@@ -2,16 +2,20 @@
     min-height: 100vh;
 }
 
-.not-page-info h1{
-    font-size: 150px;
+.not-page-info h2{
+    font-size: 100px;
     color: var(--mainColor);
     font-weight: bolder;
+    margin-bottom: 0 !important;
 }
-.not-page-info h3{
-    color: var(--yellow);
-}
+
+
 
 .btn-notfound{
     background-color: var(--mainColor) !important;
+    color: white !important;
+}
+.btn-notfound:hover {
+    background-color: #114b74 !important;
     color: white !important;
 }

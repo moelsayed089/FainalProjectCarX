@@ -19,11 +19,10 @@ function logout(){
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <nav className="navbar navbar-expand-lg  navbar-light  ">
         <div className="container">
           <Link className="navbar-brand fs-2 fw-bolder navCar" to="/">
             CAR-X
-            {/* <img src={ require('../../assests/Logos/638e307b3eae41f3706b4076.png') } alt="" /> */}
           </Link>
           <button
             className=" shadow-none navbar-toggler"
@@ -37,7 +36,7 @@ function logout(){
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav m-auto mb-2 mb-lg-0 ">
               {token ? (
                 <>
                   <li className="nav-item">
@@ -54,7 +53,7 @@ function logout(){
                       Services AI
                     </NavLink>
                   </li>
-                
+
                   <li className="nav-item">
                     <NavLink className="nav-link leftLink" to="/symbol">
                       Car Symbol
@@ -63,6 +62,12 @@ function logout(){
                   <li className="nav-item">
                     <NavLink className="nav-link leftLink" to="/blog">
                       Blog
+                    </NavLink>
+                  </li>
+
+                  <li className="nav-item">
+                    <NavLink className="nav-link leftLink" to="/fixed">
+                      Maintenance Center
                     </NavLink>
                   </li>
 
@@ -81,14 +86,13 @@ function logout(){
               {token ? (
                 <>
                   <li onClick={logout} className="nav-item ">
-                    <span className="nav-link btnNav btn btn-outline-danger rounded-pill px-4 shadow-none">
+                    <span className="nav-link btnNav btn btn-outline-danger px-4 shadow-none">
                       Logout
                     </span>
                   </li>
 
                   <li className="nav-item">
                     <div className="flex justify-content-center align-items-center">
-                  
                       <NavLink className="nav-link leftLink" to="/profile">
                         <i className="fa-solid fa-user"></i>
                         {userData?.name}

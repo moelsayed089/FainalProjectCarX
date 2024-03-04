@@ -1,6 +1,8 @@
 
 
-
+.BologDetails {
+    height: 100vh !important;
+}
 @media (max-width: 576px) {
     .BologDetails h2{
         font-size: 22px ;

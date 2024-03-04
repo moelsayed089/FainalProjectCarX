@@ -58,11 +58,16 @@ const blogDetails = data?.data.blogs
             <div className="col-lg-8 col-md-12 ">
               <div className="blog-info">
                 <h2 className="text- mb-2">{blogDetails.title}</h2>
-                <h5 className="text-warning">What It Means:</h5>
+                <h5 className="text-warning">
+                  Reasons for the problem to occur :
+                </h5>
                 <p className="text-muted">{blogDetails.description}</p>
-                <h5 className=" text-warning"> What To Do:</h5>
+                <h5 className=" text-warning">
+                  {" "}
+                  And the results are based on that :
+                </h5>
                 <p className="text-muted">{blogDetails.description2}</p>
-                <h5 className=" text-warning"> how to solll Do:</h5>
+                <h5 className=" text-warning"> How to avoid these problems :</h5>
                 <p className="text-muted">{blogDetails.description3}</p>
               </div>
             </div>

@@ -3,16 +3,8 @@
 }
  .blog-imge img {
     width: 100%;
-    transition: all .5s ease-in-out;
+    
 }
-
- .blog-imge:hover img {
-    transform: scale(1.2, 1.1);
-}
-
-
-
-
  .blog-info {
     text-decoration: none;
     color: #4c4b4b;

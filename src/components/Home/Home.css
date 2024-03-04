@@ -1,17 +1,27 @@
 .home{
     min-height: calc(100vh - 74px) !important;
+    background:url('../../assests/beams-home@95.jpg') ;
+    background-size: contain ;
+    background-position: center;
+    
 }
 
 
-.home-span{
-    font-size: 65px;
+.home .home-text h1{
     color: var(--mainColor);
-}
-.home h1{
-    color: var(--yellow);
     font-weight: 700;
-
+    font-size: 70px;
+    letter-spacing: -1px;
 }
+
+.home .home-text h3{
+font-weight: 400;
+}
+
+.home .home-img img{
+    width: 550px;
+}
+
 .home h3{
     color: var(--mainColor);
     font-weight: 400;
@@ -23,18 +33,19 @@
 }
 
 @media (max-width: 576px) {
-    .home-span {
-            font-size: 50px;
-            color: var(--mainColor);
+.home .home-text h1 {
+        color: var(--mainColor);
+        font-weight: 700;
+        font-size: 50px;
+        letter-spacing: -1px;
+    }
+        .home .home-img img {
+            width: 100%;
         }
     
 }
 @media (min-width: 992px) and (max-width: 1200px){
-    .home-span {
-            font-size: 60px;
-            color: var(--mainColor);
-            
-        }
+    
     
         .home h1 {
             color: var(--yellow);
@@ -46,5 +57,4 @@
                     font-weight: 400;
                     font-size: 25px;
                 }
-
 }

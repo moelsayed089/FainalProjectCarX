@@ -9,12 +9,12 @@ export default function Blog() {
   const getAllBlog = ({ signal }) => {
     return axios.get("http://127.0.0.1:8000/api/blogs", { signal });
   };
-  const { data, isLoading } = useQuery("allBlog", getAllBlog);
+  const { data, isLoading  } = useQuery("allBlog", getAllBlog);
 
 
   // console.log("isFetching  " + isFetching);
   // console.log(data?.data.blogs);
-  // console.log(isLoading);
+  // console.log(error);
 
   if (isLoading) {
     return (
@@ -40,54 +40,119 @@ export default function Blog() {
         </div>
       </div>
 
-      {data?.data.blogs ? (
-        <div className="blog mt-5 mb-5 ">
-          <div className="container  col-9">
-            <div className="row g-3">
-              {/* =========>> RENDER DATA <<======= */}
+      <div className="blog mt-5 mb-5 ">
+        <div className="container ">
+          <div className="row g-3">
+            <div className="col-lg-4 col-md-6 ">
+              <div className="card ">
+                <div className="blog-image">
+                  <img
+                    className="card-img-top w-100"
+                    src="https://www.pilawyers.com/wp-content/uploads/2024/02/pfeifer-crash-scene-hazards-BLOG.jpg"
+                    alt="Card"
+                  />
+                </div>
+                <div className="card-body">
+                  <h4 className="card-title blog-title fw-bold ">
+                    Crash Scene Hazards That South Bend Accident Victims Need To
+                    Avoid.
+                  </h4>
+                  <p className="text-muted mb-4">
+                    Some people may think they can drive drowsy because they can
+                    stay awake even when sleep deprived. But those who haven’t
+                    slept enough are still....
+                  </p>
+                  <Link className="blog-link px-3 py-2" to={"/blogdetails/14"}>
+                    Read More
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
+                </div>
+              </div>
+            </div>
 
-              {data?.data.blogs.map((product) => {
-                return (
-                  <div className="col-lg-4 col-xl-3 col-md-6" key={product.id}>
-                    <div className="card  w">
-                      <div className="blog-image">
-                        {product.image ? (
-                          <img
-                            className="card-img-top w-100"
-                            src={product.image}
-                            alt="Card"
-                          />
-                        ) : (
-                          <img
-                            className="card-img-top w-100"
-                            src={require("../../assests/Posts/tire-pressure-light.png")}
-                            alt="Card"
-                          />
-                        )}
-                      </div>
-                      <div className="card-body">
-                        <h3 className="card-title blog-title mb-4   fw-bold ">
-                          {product.title.split(" ").slice(0, 4).join(" ")}
-                        </h3>
-                        <p></p>
-                        <Link
-                          className="blog-link "
-                          to={`/blogdetails/${product.id}`}
-                        >
-                          Read More
-                          <i className="fa-solid fa-arrow-right"></i>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="col-lg-4 col-md-6">
+              <div className="card ">
+                <div className="blog-image">
+                  <img
+                    className="card-img-top w-100"
+                    src={require("../../assests/Posts/tire-pressure-light.png")}
+                    alt="Card"
+                  />
+                </div>
+                <div className="card-body">
+                  <h4 className="card-title blog-title fw-bold ">
+                    Crash Scene Hazards That South Bend Accident Victims Need To
+                    Avoid.
+                  </h4>
+                  <p className="text-muted mb-4">
+                    Some people may think they can drive drowsy because they can
+                    stay awake even when sleep deprived. But those who haven’t
+                    slept enough are still....
+                  </p>
+                  <Link className="blog-link px-3 py-2" to={"/blogdetails/14"}>
+                    Read More
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-6">
+              <div className="card ">
+                <div className="blog-image">
+                  <img
+                    className="card-img-top w-100"
+                    src={require("../../assests/Posts/tire-pressure-light.png")}
+                    alt="Card"
+                  />
+                </div>
+                <div className="card-body">
+                  <h4 className="card-title blog-title fw-bold ">
+                    Crash Scene Hazards That South Bend Accident Victims Need To
+                    Avoid.
+                  </h4>
+                  <p className="text-muted mb-4">
+                    Some people may think they can drive drowsy because they can
+                    stay awake even when sleep deprived. But those who haven’t
+                    slept enough are still....
+                  </p>
+                  <Link className="blog-link px-3 py-2" to={"/blogdetails/14"}>
+                    Read More
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-6">
+              <div className="card ">
+                <div className="blog-image">
+                  <img
+                    className="card-img-top w-100"
+                    src={require("../../assests/Posts/tire-pressure-light.png")}
+                    alt="Card"
+                  />
+                </div>
+                <div className="card-body">
+                  <h4 className="card-title blog-title fw-bold ">
+                    Crash Scene Hazards That South Bend Accident Victims Need To
+                    Avoid.
+                  </h4>
+                  <p className="text-muted mb-4">
+                    Some people may think they can drive drowsy because they can
+                    stay awake even when sleep deprived. But those who haven’t
+                    slept enough are still....
+                  </p>
+                  <Link className="blog-link px-3 py-2" to={"/blogdetails/14"}>
+                    Read More
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      ) : (
-        ""
-      )}
+      </div>
     </>
   );
 }

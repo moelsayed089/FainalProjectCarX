@@ -16,6 +16,7 @@ import Team from "./components/Team/Team";
 import { QueryClient, QueryClientProvider } from "react-query";
 import BologDetails from "./components/BologDetails/BologDetails";
 import { Symbol } from "./components/Symbole/Symbol";
+import { Fixed } from "./components/Fixed/Fixed";
 
 
 function App() { 
@@ -63,6 +64,15 @@ const myRouts = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Blog />
+          </ProtectedRoute>
+        ),
+      },
+
+      {
+        path: "fixed",
+        element: (
+          <ProtectedRoute>
+            <Fixed />
           </ProtectedRoute>
         ),
       },
