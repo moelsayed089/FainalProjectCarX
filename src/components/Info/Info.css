@@ -1,0 +1,81 @@
+.Services{
+    border-top: 4px solid #e8e8e8;
+    margin-bottom: 70px;
+}
+.Services h3{
+    color: var(--mainColor);
+    
+}
+
+.ser-item .Services_icoins {
+    background-color: rgba(231, 231, 231, 0.329);
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    padding: 10px;
+    line-height: 67px;
+    font-size: px;
+    transition: all .5s;
+    color: var(--mainColor);
+}
+
+.ser-item:hover .Services_icoins{
+    background-color: #f7bf60;
+    color: white;
+}
+
+.Services .main-text h1::after{
+        content: '';
+        position: absolute;
+        width: 33%;
+        height: 20%;
+        /* background-image: url(../../assests/dots.png); */
+        background-color: var(--yellow);
+        left: 50%;
+        transform: translate(-50%);
+        z-index: -1;
+        bottom: 13px;
+}
+
+.ser-item p {
+    font-size: 15px;
+    max-width: 500px;
+}
+
+.ser-item {
+border-radius: 5px;
+}
+
+@media (max-width: 576px) {
+    .Services h1{
+        font-size: 40px !important;
+    }
+        .Services h3 {
+            color: var(--mainColor);
+            text-align: start;
+        }
+
+                .ser-item p {
+                    font-size: 15px;
+                    /* max-width: 250px; */
+                    text-align: start;
+                }
+                                .ser-item .Services_icoins{
+                                    display: flex;
+                                
+                                }
+
+                                    .Services .main-text h1::after {
+                                        content: '';
+                                        position: absolute;
+                                        width: 40%;
+                                        height: 16%;
+                                        /* background-image: url(../../assests/dots.png); */
+                                        background-color: var(--yellow);
+                                        left: 50%;
+                                        transform: translate(-50%);
+                                        z-index: -1;
+                                        bottom: 10px;
+                                    }
+
+}

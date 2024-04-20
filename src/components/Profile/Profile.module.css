@@ -8,3 +8,8 @@
     font-size: 30px;
     font-weight: 700;
 }
+
+.profile h2{
+    border: 1px solid rgba(0, 0, 0, 0.507) !important;
+    border-radius: 5px !important;
+}

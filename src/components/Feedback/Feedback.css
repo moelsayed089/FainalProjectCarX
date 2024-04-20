@@ -1,8 +1,44 @@
 .feedback{
-
- border-top: 4px solid #e8e8e8;
+    border-top: 4px solid #e8e8e8;
 }
 
 textarea {
-    resize: none;
+    resize: none !important;
+}
+.inputArea{
+    border: 1px solid #013E6A !important;
+        border-radius: 5px !important;
+}
+
+.feedback .main-text h1::after {
+    content: '';
+    position: absolute;
+    width: 15%;
+    height: 20%;
+    background-color: var(--yellow);
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+    bottom: 13px;
+}
+
+@media (max-width: 570px) {
+    .feedback .main-text h1::after {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 20%;
+        /* background-image: url(../../assests/dots.png); */
+        background-color: var(--yellow);
+        left: 50%;
+        transform: translate(-50%);
+        z-index: -1;
+        bottom: 13px;
+    }
+
+    .about-text h4 {
+        font-size: 20px;
+        color: var(--mainColor);
+    }
+
 }

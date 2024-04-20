@@ -1,39 +1,32 @@
 import React, { useState } from "react";
 import "./Register.css";
 import { useFormik } from "formik";
-import { Bars } from "react-loader-spinner";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import Loading from "../../ui/Loading";
+import InputField from "../../ui/InputField";
+import Button from "../../ui/Button";
+import { validationSchemaRegister } from "../../validation";
 
 export default function Register() {
   const [isLoading, setIsLoading] = useState(null);
 
   const navigate = useNavigate();
 
-  // const [errorMessage, setErrorMessage] = useState(null);
-  // const [successMessage, setSuccessMessage] = useState(null);
-
   async function registerNewUser(values, { resetForm }) {
     setIsLoading(true);
-    // setErrorMessage(null);
-    // console.log(values)
-
-    // console.log('sending..........');
+  
 
     try {
       const { data } = await axios.post(
         "http://127.0.0.1:8000/api/register",
         values
       );
-      // console.log(data.data)
-      // console.log(data.message)
-      // console.log(data.data.token)
-      // console.log(data.data.name)
-      // console.log(data.data.email)
+   console.log(values)
+   console.log(data)
 
-      if (data.message === "User register successfully.") {
-        // setSuccessMessage('Account has created successfully')
+      if (data.message === "User registered successfully.") {
         toast.success("Account has created successfully", {
           position: "bottom-right",
         });
@@ -43,16 +36,15 @@ export default function Register() {
       }
     } catch (error) {
       let errorRes = error.response.data.data.email.join();
-      // console.log(error)
-      // console.log(errorRes);
-      // setErrorMessage(errorRes)
+      console.log(error)
+      console.log(errorRes);
       toast.error(errorRes, {
         position: "bottom-right",
       });
     }
 
     setIsLoading(false);
-    // resetForm();
+    resetForm();
   }
 
   const formObject = useFormik({
@@ -62,38 +54,10 @@ export default function Register() {
       phone: "",
       password: "",
       car: "",
+      car2:""
     },
-
     onSubmit: registerNewUser,
-
-    validate: (values) => {
-      // setErrorMessage(null);
-
-      const errors = {};
-      if (values.name.length < 5) {
-        errors.name = "Name must be form 5 characters";
-      }
-
-      if (
-        values.email.includes("@") === false ||
-        values.email.includes(".") === false
-      ) {
-        errors.email = "Email not valid must be contain (@) and (.)";
-      }
-
-      if (!values.phone.match(/^(02)?01[0125][0-9]{8}$/)) {
-        errors.phone = "Phon not valid";
-      }
-
-      if (values.password.length < 7 || values.password.length > 15) {
-        errors.password = "Password must be form 7 characters to 15 characters";
-      }
-
-      if (values.car.length < 3) {
-        errors.car = "Type of car not valid";
-      }
-      return errors;
-    },
+    validate: validationSchemaRegister
   });
 
   return (
@@ -118,151 +82,83 @@ export default function Register() {
             </div>
 
             <form onSubmit={formObject.handleSubmit}>
-              <div className="mb-2">
-                <label className="lableRes" htmlFor="name">
-                  Name :
-                </label>
-                <input
-                  value={formObject.values.name}
-                  onBlur={formObject.handleBlur}
-                  onChange={formObject.handleChange}
-                  id="name"
-                  type="text"
-                  className="  form-control shadow-none mb-1 py-2 inputRes"
-                  placeholder="Enter Your Name "
-                />
-                {formObject.errors.name && formObject.touched.name ? (
-                  <span className="text-danger fw-bold ">
-                    {formObject.errors.name}
-                  </span>
-                ) : (
-                  ""
-                )}
+
+
+              <InputField label={"Name"}
+                className={"lableRes"}
+                value={formObject.values.name}
+                onBlur={formObject.handleBlur}
+                onChange={formObject.handleChange}
+                id="name"
+                type="text"
+                placeholder="Enter Your Name "
+                error={formObject.touched.name && formObject.errors.name}
+              />
+              {/* ======================= */}
+              <InputField label={"Email"}
+                className={"lableRes"}
+                value={formObject.values.email}
+                onBlur={formObject.handleBlur}
+                onChange={formObject.handleChange}
+                id="email"
+                type="text"
+                placeholder="Enter Your Email "
+                error={formObject.touched.email && formObject.errors.email}
+              />
+
+              {/* ======================= */}
+              <InputField label={"Phone"}
+                className={"lableRes"}
+                value={formObject.values.phone}
+                onBlur={formObject.handleBlur}
+                onChange={formObject.handleChange}
+                id="phone"
+                type="text"
+                placeholder="Enter Your Phone  "
+                error={formObject.touched.phone && formObject.errors.phone}
+              />
+
+              {/* ======================= */}
+              <InputField label={"Password"}
+                className={"lableRes"}
+                value={formObject.values.password}
+                onBlur={formObject.handleBlur}
+                onChange={formObject.handleChange}
+                id="password"
+                type="password"
+                placeholder="Enter Your Password   "
+                error={formObject.touched.password && formObject.errors.password}
+              />
+
+              <div className="mb-2 row ">
+              <div className="col-lg-6">
+                  <InputField label={"Type Of Car1"}
+                    className={"lableRes"}
+                    value={formObject.values.car}
+                    onBlur={formObject.handleBlur}
+                    onChange={formObject.handleChange}
+                    id="car"
+                    type="text"
+                    placeholder="Enter Your Car"
+                    error={formObject.touched.car && formObject.errors.car}
+                  />
               </div>
 
-              <div className="mb-2">
-                <label className="lableRes" htmlFor="email">
-                  Email :
-                </label>
-                <input
-                  value={formObject.values.email}
-                  onBlur={formObject.handleBlur}
-                  onChange={formObject.handleChange}
-                  id="email"
-                  type="email"
-                  className="form-control shadow-none mb-1 py-2 inputRes"
-                  placeholder="Enter Your Email "
-                />
-                {formObject.errors.email && formObject.touched.email ? (
-                  <span className="text-danger fw-bold">
-                    {formObject.errors.email}
-                  </span>
-                ) : (
-                  ""
-                )}
+                <div className="col-lg-6">
+                  <InputField label={"Type Of Car2"}
+                    className={"lableRes"}
+                    value={formObject.values.car2}
+                    onBlur={formObject.handleBlur}
+                    onChange={formObject.handleChange}
+                    id="car2"
+                    type="text"
+                    placeholder="Enter Your Car22"
+                    error={formObject.touched.car2 && formObject.errors.car2}
+                  />
               </div>
-
-              <div className="mb-2">
-                <label className="lableRes" htmlFor="phone">
-                  Phone :
-                </label>
-                <input
-                  value={formObject.values.phone}
-                  onBlur={formObject.handleBlur}
-                  onChange={formObject.handleChange}
-                  id="phone"
-                  type="tel"
-                  className="form-control shadow-none mb-1 py-2 inputRes"
-                  placeholder="Enter Your Phone "
-                />
-                {formObject.errors.phone && formObject.touched.phone ? (
-                  <span className=" text-danger fw-bold">
-                    {formObject.errors.phone}
-                  </span>
-                ) : (
-                  ""
-                )}
               </div>
-
-              <div className="mb-2">
-                <label className="lableRes" htmlFor="password">
-                  Password :
-                </label>
-                <input
-                  value={formObject.values.password}
-                  onBlur={formObject.handleBlur}
-                  onChange={formObject.handleChange}
-                  id="password"
-                  type="password"
-                  className="form-control shadow-none mb-1 py-2 inputRes"
-                  placeholder="Enter Your Password "
-                />
-                {formObject.errors.password && formObject.touched.password ? (
-                  <span className=" text-danger fw-bold">
-                    {formObject.errors.password}
-                  </span>
-                ) : (
-                  ""
-                )}
-              </div>
-
-              <div className="mb-2">
-                <label className="lableRes" htmlFor="car">
-                  Type Of Car :
-                </label>
-                <input
-                  value={formObject.values.car}
-                  onBlur={formObject.handleBlur}
-                  onChange={formObject.handleChange}
-                  id="car"
-                  type="text"
-                  className="form-control shadow-none mb-1 py-2 inputRes"
-                  placeholder="Enter Your Type Of Car "
-                />
-                {formObject.errors.car && formObject.touched.car ? (
-                  <span className=" text-danger fw-bold">
-                    {formObject.errors.car}
-                  </span>
-                ) : (
-                  ""
-                )}
-              </div>
-
-              {/* {errorMessage ? (
-                <div className=" alert alert-danger">{errorMessage}</div>
-              ) : (
-                ""
-              )} */}
-
-              {/* {successMessage ? (
-                <div className=" alert  alert-success">{successMessage}</div>
-              ) : (
-                ""
-              )} */}
-
-              <button
-                disabled={
-                  formObject.isValid === false || formObject.dirty === false
-                }
-                type="submit"
-                className="btn btnColor py-3 px-4 mb-5 shadow-none w-100"
-              >
-                {isLoading ? (
-                  <div className=" d-flex justify-content-center">
-                    <Bars
-                      height="30"
-                      width="25"
-                      color="#fff"
-                      ariaLabel="bars-loading"
-                      wrapperStyle={{}}
-                      wrapperClass=""
-                      visible={true}
-                    />
-                  </div>
-                ) : (
-                  "Sign Up"
-                )}
-              </button>
+              <Button type={'submit'} disable={formObject.isValid === false || formObject.dirty === false} 
+              label={isLoading ? <Loading /> : "Sign Up"} color={'btnColor'} width={'w-100'} />
             </form>
           </div>
         </div>
@@ -270,3 +166,4 @@ export default function Register() {
     </>
   );
 }
+

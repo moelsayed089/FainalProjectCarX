@@ -40,6 +40,15 @@ const myRouts = createBrowserRouter([
         errorElement: <h3>looooo</h3>,
       },
 
+      // {
+      //   path: "servicedetails",
+      //   element: (
+      //     <ProtectedRoute>
+      //       <ServiceDetails />
+      //     </ProtectedRoute>
+      //   ),
+      // },
+
       {
         path: "profile",
         element: (

@@ -10,7 +10,6 @@ export const Fixed = () => {
     return axios.get("http://127.0.0.1:8000/api/centers", { signal });
   };
   const { data, isLoading } = useQuery("allBlog", getCenterFiexd);
-  console.log(data?.data.centers);
   const centerDataFixed = data?.data.centers;
 
   if (isLoading) {
@@ -32,9 +31,16 @@ export const Fixed = () => {
 
   return (
     <>
-      <section className="fixed mb-5 ">
-        <div className="main-text py-3">
-          <h1 className=" text-center position-relative">Fixed Center</h1>
+      <section className="fixed mt-2">
+        <div className="main-text ">
+          <h1 className=" text-center position-relative">Maintenance Center</h1>
+        </div>
+        <div className="d-flex justify-content-center">
+          <div className="text-center col-lg-6  text-muted mb-2">
+            <p className="">
+              Our customized maintenance plans are tailored to your vehicle's specific needs, driving habits, and usage patterns. Whether you're a daily commuter or a weekend adventurer,<span className='fixed_span'> we create personalized maintenance schedules </span>to keep your vehicle running smoothly and efficiently.
+            </p>
+          </div>
         </div>
 
         <div className="container">
@@ -43,12 +49,12 @@ export const Fixed = () => {
             className="carousel slide"
             data-bs-ride="false"
           >
-            <div className="row pt-4">
+            <div className="row pt-2">
               {centerDataFixed
                 ? centerDataFixed.map((item) => (
                     <div key={item.id} className="col-lg-4 mb-3">
                       <div className="card">
-                        <div className="blog-imge  ">
+                        <div className="fixed_image  ">
                           <img
                             src={
                               item.image
@@ -68,20 +74,13 @@ export const Fixed = () => {
 
                           <p className="card-text mb-2">
                             <span className="fixed-span">Work: </span>
-                            at 9pm - 5pm
+                          {item.works}
                           </p>
 
                           <p className="card-text mb-2">
                             <span className="fixed-span">Phone: </span>
-                            +02 011 2255 459
+                          {item.phone}
                           </p>
-                          {/* <a
-                            href="https://www.toyota.com/"
-                            target="_blank"
-                            className=" blog-info position-relative"
-                          >
-                            Read More
-                          </a> */}
                         </div>
                       </div>
                     </div>

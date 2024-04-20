@@ -1,35 +1,17 @@
-import React, { useContext } from 'react'
 import ProfileStyle from './Profile.module.css'
 import { authContext } from '../../Context/AuthProvider';
-import { Puff } from 'react-loader-spinner';
+import { useContext } from 'react';
 
 export default function Profile() {
+  // const storedUserData = localStorage.getItem("useData");
+  // const userData = JSON.parse(storedUserData);
 
-  // const [isLoading, setIsLoading] = useState(null);
-
-  const { userData } = useContext(authContext);
-  // console.log(userData);
-
-if(!userData) 
-return (
-      <div className="vh-100 d-flex justify-content-center align-items-center">
-        <Puff
-          visible={true}
-          height="80"
-          width="80"
-          color="#013e6a"
-          ariaLabel="puff-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-        />
-      </div>
-    );
-
+   const { userData  } = useContext(authContext);
   return (
     <>
-      <div className="container col-lg-6  mt-4 px-2">
+      <div className={`container col-lg-6 mt-2 ${ProfileStyle.profile}`}>
         <div className="d-flex flex-column  align-items-center">
-          <div className=" py-4">
+          <div className=" ">
             <img
               src={require("../../assests/Memoji/profile.png")}
               alt="..."
@@ -41,20 +23,30 @@ return (
 
         <div className="pb-5">
           <label className="fw">FullName</label>
-          <h2 className="form-control mb-3"> {userData.name}</h2>
+          <h2 className="form-control mb-3"> {userData?.name}</h2>
 
-          <label className="fw">Email</label>
-          <h2 className="form-control mb-3"> {userData.email}</h2>
+          <div className="row">
+            <div className='col-lg-6 '>
+              <label className="fw">Email</label>
+              <h2 className="form-control mb-3"> {userData?.email}</h2>
+            </div>
 
-          <label className="fw">Phone</label>
-          <h2 className="form-control mb-3"> {userData.phone}</h2>
+            <div className='col-lg-6 '>
+              <label className="fw">Phone</label>
+              <h2 className="form-control  mb-3"> {userData?.phone}</h2>
+            </div>
+          </div>
 
-          <label className="fw">Car Type</label>
-          <h2 className="form-control "> {userData.car}</h2>
+          <label className="fw">Type Of Car1</label>
+          <h2 className="form-control nnn "> {userData?.car}</h2>
+
+          {userData?.car2 ? <><label className="fw">Type Of Car2</label>
+          <h2 className="form-control nnn "> {userData?.car2}</h2> </>: ""}
+
         </div>
       </div>
     </>
   );
-  
-  
+
+
 }

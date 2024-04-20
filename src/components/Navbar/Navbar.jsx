@@ -1,21 +1,24 @@
 import React, { useContext } from 'react'
 import './Navbar.css'
-import  {Link, NavLink, useNavigate}  from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { authContext } from '../../Context/AuthProvider'
+import Cookies from 'js-cookie';
 
 export default function Navbar() {
 
-const {token,setToken ,userData,setUserData } = useContext(authContext)
+  const { setToken, userData, setUserData } = useContext(authContext)
 
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
-function logout(){
-  localStorage.removeItem('token')
-  localStorage.removeItem("useData");
-  setToken(null)
-  setUserData({})
-  navigate('/home')
-}
+  function logout() {
+    localStorage.removeItem("token")
+    localStorage.removeItem("useData")
+    Cookies.remove('token')
+    Cookies.remove('userData');
+    setToken(null)
+    setUserData({})
+    navigate('/home')
+  }
 
   return (
     <>
@@ -37,9 +40,9 @@ function logout(){
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav m-auto mb-2 mb-lg-0 ">
-              {token ? (
+              {userData && userData?.token ? (
                 <>
-                  <li className="nav-item">
+                  <li className="nav-item ">
                     <NavLink
                       className="nav-link active leftLink"
                       aria-current="page"
@@ -83,10 +86,10 @@ function logout(){
             </ul>
 
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
-              {token ? (
+              {userData && userData?.token ? (
                 <>
-                  <li onClick={logout} className="nav-item ">
-                    <span className="nav-link btnNav btn btn-outline-danger px-4 shadow-none">
+                  <li onClick={logout} className="nav-item  d-flex justify-content-center  align-items-center">
+                    <span className="nav-link btnNav btn btn-outline-danger py-2 px-4 w-100 shadow-none">
                       Logout
                     </span>
                   </li>
@@ -104,7 +107,7 @@ function logout(){
                 <>
                   <li className="nav-item  mb-3 mb-lg-0  ">
                     <Link
-                      className="nav-link text-white btnColor  btn  rounded-pill px-4 shadow-none"
+                      className="nav-link text-white btnColor  btn   px-4 shadow-none"
                       to="/register"
                     >
                       Sign up
@@ -112,7 +115,7 @@ function logout(){
                   </li>
                   <li className="nav-item mx-lg-2 mb-3 mb-lg-0 ">
                     <Link
-                      className="nav-link btnNav btn btnColorlogin rounded-pill px-4 shadow-none"
+                      className="nav-link btnNav btn btnColorlogin  px-4 shadow-none"
                       to="/login"
                     >
                       Sign in

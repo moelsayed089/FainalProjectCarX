@@ -72,17 +72,17 @@ export const aboutData = [
   {
     id: uuid(),
     textInfo:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque porro totam esse odio, nemo aspernatur reiciendis rem nesciunt? Molestias atque nobis rem tempore fugit. Facere placeat maiores veniam ipsam illo Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque porro totam esse odio, nemo aspernatur reiciendis rem nesciunt? Molestias atque nobis rem tempore fugit. Facere placeat maiores veniam ipsam illo!",
+      "Our team of automotive experts, engineers, and data scientists harness the power of cutting-edge technology, including AI, machine learning, and predictive analytics, to deliver advanced diagnostic capabilities and predictive maintenance solutions. We understand the importance of reliable transportation and strive to empower our customers with the knowledge and tools they need to keep their vehicles running smoothly and safely.",
   },
   {
     id: uuid(),
     textInfo:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque porro totam esse odio, nemo aspernatur reiciendis rem nesciunt? Molestias atque nobis rem tempore fugit. Facere placeat maiores veniam ipsam illo Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque porro totam esse odio, nemo aspernatur reiciendis rem nesciunt? Molestias atque nobis rem tempore fugit. Facere placeat maiores veniam ipsam illo!",
+      "But we're more than just a technology company; we're a community of car enthusiasts, mechanics, and experts who share a common goal: to make car ownership a hassle-free and enjoyable experience. Through our platform, users can access a wealth of educational resources, connect with like-minded individuals, and receive personalized support and guidance from our team of experts.",
   },
   {
     id: uuid(),
     textInfo:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque porro totam esse odio, nemo aspernatur reiciendis rem nesciunt? Molestias atque nobis rem tempore fugit. Facere placeat maiores veniam ipsam illo Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque porro totam esse odio, nemo aspernatur reiciendis rem nesciunt? Molestias atque nobis rem tempore fugit. Facere placeat maiores veniam ipsam illo!",
+      "At CAR-X , we're dedicated to providing unparalleled service, innovative solutions, and exceptional customer experiences. Whether you're a seasoned car enthusiast or a first-time vehicle owner, you can trust us to be your reliable partner on the road ahead.Welcome to CAR-X where automotive excellence meets technological innovation!"
   },
 ];
 
@@ -282,3 +282,57 @@ export const UnknownSymbols = [
       "Press the brake pedal, then shift gears or start the ignition, whichever you are wanting to do.",
   },
 ];
+
+
+/* =========>>  Handel  Our Serves  <<=======  */
+
+export const Serves = [
+  {
+    id: uuid(),
+    image: require("../assests/icons/icons8-artificial-intelligence-100.png"),
+    title: "Advanced Diagnosis",
+    decription:
+      "Our AI-powered diagnostic engine analyzes input data from users, including symptoms, diagnostic codes, and vehicle history,to provide accurate and timely diagnoses of potential car problems.",
+  },
+
+  {
+    id: uuid(),
+    image: require("../assests/icons/icons8-services-100.png"),
+    title: "Predictive Maintenance",
+    decription:
+      "By leveraging machine learning algorithms, our platform can predict future maintenance needs based on historical data and usage patterns helping users proactively address issues before  escalate.",
+  },
+
+  {
+    id: uuid(),
+    image: require("../assests/icons/icons8-note-50.png"),
+    title: "Expert Recommendations",
+    decription:
+      "In addition to automated diagnoses, our platform offers expert recommendations and advice based on industry best practices and real-world experience , providing users with actionable.",
+  },
+
+  {
+    id: uuid(),
+    image: require("../assests/icons/icons8-web-50.png"),
+    title: "User-Friendly Interface",
+    decription:
+      "With a sleek and intuitive user interface, our web application makes it easy for users to input relevant information, view diagnostic results, and access additional resources and support.",
+  },
+
+  {
+    id: uuid(),
+    image: require("../assests/icons/icons8-community-50 (1).png"),
+    title: "Community Engagement",
+    decription:
+      "Users can connect with a vibrant community of car enthusiasts, mechanics, and experts to share insights, ask questions, and collaborate on troubleshooting and maintenance tasks.",
+  },
+
+  {
+    id: uuid(),
+    image: require("../assests/icons/icons8-iphone-14-50.png"),
+    title: "Mobile Compatibility",
+    decription:
+      "With responsive design, our web application is accessible from any device, including smartphones and tablets, ensuring users can access critical information on the go.",
+  },
+];
+

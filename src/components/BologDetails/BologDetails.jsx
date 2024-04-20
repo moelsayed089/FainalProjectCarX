@@ -22,7 +22,7 @@ const blogDetails = data?.data.blogs
 
 
 
-
+  
 
   if (isLoading) {
     return (
@@ -45,17 +45,16 @@ const blogDetails = data?.data.blogs
       <main className="BologDetails">
         <div className="container mt-5 ">
           <div className="row p-1">
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-5 col-md-6">
               <div className="img-card mb-4">
                 <img
-                  // src={require("../../assests/Posts/tire-pressure-light.png")}
                   src={blogDetails.image}
                   className="w-100 shadow-sm rounded-3"
                   alt="iamge_symobol"
                 />
               </div>
             </div>
-            <div className="col-lg-8 col-md-12 ">
+            <div className="col-lg-7 col-md-12 ">
               <div className="blog-info">
                 <h2 className="text- mb-2">{blogDetails.title}</h2>
                 <h5 className="text-warning">
@@ -63,7 +62,6 @@ const blogDetails = data?.data.blogs
                 </h5>
                 <p className="text-muted">{blogDetails.description}</p>
                 <h5 className=" text-warning">
-                  {" "}
                   And the results are based on that :
                 </h5>
                 <p className="text-muted">{blogDetails.description2}</p>

@@ -1,8 +1,9 @@
 .Support{
     border-top: 4px solid #e8e8e8;
+
 }
 
-.main-text-1 h1::after{
+/* .main-text-1 h1::after{
         content: '';
         position: absolute;
         width: 20%;
@@ -12,7 +13,7 @@
         transform: translate(-50%);
         z-index: -1;
         bottom: -5px;
-}
+} */
 
 .main-text-1 h1 {
     color: var(--mainColor);

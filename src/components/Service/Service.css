@@ -1,0 +1,52 @@
+
+.service_body h4 {
+    color: var(--mainColor);
+    font-weight: 600;
+    background-color: #e7e7e7;
+}
+
+
+.service_select {
+    margin-top: 75px;
+}
+
+.btn_service {
+    background-color: var(--mainColor) !important;
+    color: white !important;
+}
+
+.serv-border {
+        border: 1px solid #1313133f !important;
+        border-radius: 5px !important;
+}
+
+.service_header .main-text h1::after {
+    content: '';
+    position: absolute;
+    width: 17%;
+    height: 20%;
+    background-color: var(--yellow);
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+    bottom: 13px;
+}
+.service_span{
+    color: var(--yellow);
+}
+@media (max-width: 570px) {
+    .service_header .main-text h1::after {
+        content: '';
+        position: absolute;
+        width: 65%;
+        height: 20%;
+        background-color: var(--yellow);
+        left: 50%;
+        transform: translate(-50%);
+        z-index: -1;
+        bottom: 13px;
+    }
+
+}
+
+
