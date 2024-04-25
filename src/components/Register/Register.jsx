@@ -8,23 +8,37 @@ import Loading from "../../ui/Loading";
 import InputField from "../../ui/InputField";
 import Button from "../../ui/Button";
 import { validationSchemaRegister } from "../../validation";
+import CarField from "../../ui/CarField";
 
 export default function Register() {
   const [isLoading, setIsLoading] = useState(null);
 
   const navigate = useNavigate();
 
+  const carOptionsOne =[
+  
+    { value: "GOLF", label: "GOLF" },
+    { value: "Verna", label: "Verna" },
+    { value: "Cerato", label: "Cerato" }
+  ]
+
+
+
+  const carOptionsTwo = [
+
+    { value: "sedan", label: "Sedan" },
+    { value: "suv", label: "SUV" },
+    { value: "hatchback", label: "Hatchback" }
+  ]
+
   async function registerNewUser(values, { resetForm }) {
     setIsLoading(true);
-  
-
     try {
       const { data } = await axios.post(
         "http://127.0.0.1:8000/api/register",
         values
       );
-   console.log(values)
-   console.log(data)
+  
 
       if (data.message === "User registered successfully.") {
         toast.success("Account has created successfully", {
@@ -36,13 +50,10 @@ export default function Register() {
       }
     } catch (error) {
       let errorRes = error.response.data.data.email.join();
-      console.log(error)
-      console.log(errorRes);
       toast.error(errorRes, {
         position: "bottom-right",
       });
     }
-
     setIsLoading(false);
     resetForm();
   }
@@ -82,7 +93,6 @@ export default function Register() {
             </div>
 
             <form onSubmit={formObject.handleSubmit}>
-
 
               <InputField label={"Name"}
                 className={"lableRes"}
@@ -130,30 +140,28 @@ export default function Register() {
                 error={formObject.touched.password && formObject.errors.password}
               />
 
-              <div className="mb-2 row ">
-              <div className="col-lg-6">
-                  <InputField label={"Type Of Car1"}
-                    className={"lableRes"}
+              <div className="mb-2 row mt-3">
+                <div className="col-lg-6">
+                  <CarField
+                    name="car"
+                    id="car"
                     value={formObject.values.car}
                     onBlur={formObject.handleBlur}
                     onChange={formObject.handleChange}
-                    id="car"
-                    type="text"
-                    placeholder="Enter Your Car"
-                    error={formObject.touched.car && formObject.errors.car}
+                    options={carOptionsOne}
+                    error={formObject.errors.car && formObject.touched.car ? formObject.errors.car : ""}
                   />
-              </div>
+                </div>
 
                 <div className="col-lg-6">
-                  <InputField label={"Type Of Car2"}
-                    className={"lableRes"}
+                  <CarField
+                    name="car2"
+                    id="car2"
                     value={formObject.values.car2}
                     onBlur={formObject.handleBlur}
                     onChange={formObject.handleChange}
-                    id="car2"
-                    type="text"
-                    placeholder="Enter Your Car22"
-                    error={formObject.touched.car2 && formObject.errors.car2}
+                    options={carOptionsTwo}
+                    error={formObject.errors.car2 && formObject.touched.car2 ? formObject.errors.car2 : ""}
                   />
               </div>
               </div>

@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 
 
 export default function Service() {
-  const { userData  } = useContext(authContext)
+  const { userData } = useContext(authContext)
   const [description, setDescription] = useState("");
   const [cost, setCost] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -130,33 +130,34 @@ export default function Service() {
       })
       .finally(() => {
         setIsLoading(false);
-        
+
       });
-   
+
   };
-// --------------------------------------------------------
+  // --------------------------------------------------------
   const formObject = useFormik({
     initialValues: {
       location: "",
     },
     validate: validationSchemaLocation,
-     onSubmit: () => {
-       saveHanhel();
+    onSubmit: () => {
+      saveHanhel();
     },
   });
 
 
   const saveHanhel = () => {
     const userId = userData?.id ?? '';
+    console.log(userId)
     const location = formObject.values.location
     setIsLoading(true);
     axios
       .post(
         "http://127.0.0.1:8000/api/submit",
-        { ...dataFromModal, location , userId }
+        { ...dataFromModal, location, userId }
       )
       .then((response) => {
-        if (response.data.message === "Submit created successfully"){
+        if (response.data.message === "Submit created successfully") {
           toast.success("Problem has submited successfully", {
             position: "bottom-right",
           });
@@ -170,7 +171,7 @@ export default function Service() {
       });
 
     // console.log("Data From Modaal Is Sending.."); 
-};
+  };
 
   return (
     <>
@@ -193,7 +194,7 @@ export default function Service() {
             <div className="col-12">
               <form onSubmit={formik.handleSubmit}>
 
-                <SelectField name={"Part"} value={formik.values.Part} onChange={formik.handleChange} onBlur={formik.handleBlur} 
+                <SelectField name={"Part"} value={formik.values.Part} onChange={formik.handleChange} onBlur={formik.handleBlur}
                   options={options1}
                   error={formik.touched.Part && formik.errors.Part}
                   data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="450"
@@ -236,7 +237,7 @@ export default function Service() {
             </div>
           </div>
         </div>
-{/* modal ai */}
+        {/* modal ai */}
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal fade" id="exampleModalCenter" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog">
@@ -245,49 +246,53 @@ export default function Service() {
                   <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
                   <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div className="modal-body">
-                  {isLoading && dataFromModal === '' ? (
-                    <div className="d-flex justify-content-center align-items-center">
-                      <div>
-                        <Loading />
+                <form onSubmit={formObject.handleSubmit}>
+                  <div className="modal-body">
+                    {isLoading && dataFromModal === '' ? (
+                      <div className="d-flex justify-content-center align-items-center">
+                        <div>
+                          <Loading />
+                        </div>
+                        <div>
+                          <h5>Predict is Loading ...</h5>
+                        </div>
                       </div>
-                      <div>
-                        <h5>Predict is Loading ...</h5>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="mb-4">
-                     {!isLoading ? <>
+                    ) : (
+                      <div className="mb-4">
+                        {!isLoading ? <>
                           <div className="modal_descraption">
-                            <h6> Descraption: <span className="text-muted">{description}</span></h6>
+                            {/* <span className="text-muted">{description}</span> */}
+                            <h6> Descraption: </h6>
                           </div>
                           <div className="modal_descraption">
-                            <h6> Cost: <span className="text-muted">{cost}</span></h6>
+                            {/* <span className="text-muted">{cost}</span> */}
+                            <h6> Cost: </h6>
                           </div>
-                          
-                     </> : ""}
-                    </div>
-                  )}
 
-                  <div>
-                  
-                    <InputField label={"Please enter the location to help us contact you faster*"}
-                      value={formObject.values.location}
-                      onBlur={formObject.handleBlur}
-                      onChange={formObject.handleChange}
-                      id="location"
-                      type="text"
-                      placeholder={"Enter your Location ex::https://maps.app.googl/  "}
-                      error={formObject.touched.location && formObject.errors.location}
-                    />
+                        </> : ""}
+                      </div>
+                    )}
+
+                    <div>
+
+                      <InputField label={"Please enter the location to help us contact you faster*"}
+                        value={formObject.values.location}
+                        onBlur={formObject.handleBlur}
+                        onChange={formObject.handleChange}
+                        id="location"
+                        type="text"
+                        placeholder={"Enter your Location ex::https://maps.app.googl/  "}
+                        error={formObject.touched.location && formObject.errors.location}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="modal-footer">
-                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" className="btn btn-primary" data-bs-dismiss="modal"
-                    disabled={ (formObject.touched.location && formObject.errors.location)}
-                  onClick={saveHanhel}>Submit Problem</button>
-                </div>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" className="btn btn-primary" data-bs-dismiss="modal"
+                      disabled={formObject.isValid === false || formObject.dirty === false}
+                      onClick={saveHanhel}>Submit Problem</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

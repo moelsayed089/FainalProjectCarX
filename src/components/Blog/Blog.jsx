@@ -11,6 +11,8 @@ export default function Blog() {
   };
   const { data, isLoading  } = useQuery("allBlog", getAllBlog);
 
+  
+
   if (isLoading) {
     return (
       <div className="vh-100 d-flex justify-content-center align-items-center">
@@ -41,6 +43,7 @@ export default function Blog() {
           </div>
         </div>
       </div>
+
 
       {data?.data.blogs ? <div className="blog mt-3 mb-3 ">
         <div className="container ">

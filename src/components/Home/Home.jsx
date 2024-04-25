@@ -9,6 +9,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import { Info } from '../Info/Info'
+import Support from '../Support/Support'
 
 
 export default function Home() {
@@ -47,9 +48,8 @@ export default function Home() {
       </div>
 
       <About />
-      {/* <Support /> */}
-      {/* <ComeSoon /> */}
       <Info/>
+      <Support />
       <Feedback />
       <Footer />
     </>

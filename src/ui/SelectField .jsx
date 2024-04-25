@@ -1,8 +1,9 @@
 import ErrorMeg from "./ErrorMeg";
 
-const SelectField = ({ name, value, className, options, error, ...rest }) => {
+const SelectField = ({ name,id, value, className, options, error, ...rest }) => {
     return <>
         <select
+            id={id}
             name={name}
             value={value}
             className="form-select form-control serv-border shadow-none mb-2"

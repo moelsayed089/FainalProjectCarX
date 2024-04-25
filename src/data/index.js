@@ -93,14 +93,14 @@ export const supportCarData = [
     id: uuid(),
     name: "GOLF",
     title:
-      "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "",
     suportImage: require("../assests/Cars/golf.png"),
   },
   {
     id: uuid(),
     name: "verna",
     title:
-      "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "",
     suportImage: require("../assests/Cars/Hyundai-Verna-PNG-Isolated-Photo.png"),
   },
 
@@ -108,7 +108,7 @@ export const supportCarData = [
     id: uuid(),
     name: "cerato",
     title:
-      "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "",
     suportImage: require("../assests/Cars/kia-20.png"),
   },
 ];

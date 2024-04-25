@@ -21,51 +21,72 @@
     font-weight: 500;
 }
 
-.support-car {
-    width: 300px;
-    margin: auto;
 
-}
 
-.support-logo{
-    width: 100px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-}
 
-.card {
-    background-color: #f6f6f6 !important;
+.Support .card {
+    background-color: #f6f6f6a2 !important;
     border: 0 !important;
     
 }
 
 
-.card img{
-height: 190px;
-object-fit: fill;
+.Support .card img{
+height: 150px;
+object-fit:contain;
 }
 
-.card .btn-Service{
-    /* color: var(--yellow) !important; */
+
+.Support .card .btn-Service{
     color: white !important;
     background-color: var(--mainColor);
 }
 
-.card .btn-Blog{
-    /* color: var(--yellow) !important; */
+.Support .card .btn-Blog{
+
     color: #ffbb29 !important;
     border: 2px solid #013e6a ;
     transition:all .3s;
 }
-.card .btn-Blog:hover{
-    /* color: var(--yellow) !important; */
+.Support .card .btn-Blog:hover{
     color: white !important;
     background-color: #013e6a;
 }
 
-.card span{
-    font-size: 40px;
+.Support .card span{
+    font-size: 35px;
     color: var(--mainColor);
     font-weight: bold;
 }
 
+.Support .main-text h1::after {
+    content: '';
+    position: absolute;
+    width: 22%;
+    height: 20%;
+    /* background-image: url(../../assests/dots.png); */
+    background-color: var(--yellow);
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+    bottom: 13px;
+}
+
+.spport_span{
+    color: var(--yellow);
+}
+
+@media (max-width: 570px) {
+    .Support .main-text h1::after {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 20%;
+        background-color: var(--yellow);
+        left: 50%;
+        transform: translate(-50%);
+        z-index: -1;
+        bottom: 13px;
+    }
+    
+}
