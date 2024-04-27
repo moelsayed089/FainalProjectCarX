@@ -62,7 +62,7 @@ object-fit:contain;
 .Support .main-text h1::after {
     content: '';
     position: absolute;
-    width: 22%;
+    width: 24%;
     height: 20%;
     /* background-image: url(../../assests/dots.png); */
     background-color: var(--yellow);

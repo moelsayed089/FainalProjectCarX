@@ -15,20 +15,28 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  const carOptionsOne =[
-  
-    { value: "GOLF", label: "GOLF" },
-    { value: "Verna", label: "Verna" },
-    { value: "Cerato", label: "Cerato" }
+  const carOptionsOne = [
+    { value: "Kia Cerato", label: "Kia Cerato" },
+    { value: "Hyundai Elantra", label: "Hyundai Elantra" },
+    { value: "Hyundai Verna", label: "Hyundai Verna" },
+    { value: "Toyota Corolla", label: "Toyota Corolla" },
+    { value: "Nissan Sunny", label: "Nissan Sunny" },
+    { value: "Chevrolet Aveo", label: "Chevrolet Aveo" },
+    { value: "Volkswagen Golf", label: "Volkswagen Golf" },
+    { value: "Renault Logan", label: "Renault Logan" }
   ]
 
 
 
   const carOptionsTwo = [
-
-    { value: "sedan", label: "Sedan" },
-    { value: "suv", label: "SUV" },
-    { value: "hatchback", label: "Hatchback" }
+    { value: "Kia Cerato", label: "Kia Cerato" },
+    { value: "Hyundai Elantra", label: "Hyundai Elantra" },
+    { value: "Hyundai Verna", label: "Hyundai Verna" },
+    { value: "Toyota Corolla", label: "Toyota Corolla" },
+    { value: "Nissan Sunny", label: "Nissan Sunny" },
+    { value: "Chevrolet Aveo", label: "Chevrolet Aveo" },
+    { value: "Volkswagen Golf", label: "Volkswagen Golf" },
+    { value: "Renault Logan", label: "Renault Logan" }
   ]
 
   async function registerNewUser(values, { resetForm }) {
@@ -38,7 +46,7 @@ export default function Register() {
         "http://127.0.0.1:8000/api/register",
         values
       );
-  
+
 
       if (data.message === "User registered successfully.") {
         toast.success("Account has created successfully", {
@@ -65,7 +73,7 @@ export default function Register() {
       phone: "",
       password: "",
       car: "",
-      car2:""
+      car2: ""
     },
     onSubmit: registerNewUser,
     validate: validationSchemaRegister
@@ -163,10 +171,10 @@ export default function Register() {
                     options={carOptionsTwo}
                     error={formObject.errors.car2 && formObject.touched.car2 ? formObject.errors.car2 : ""}
                   />
+                </div>
               </div>
-              </div>
-              <Button type={'submit'} disable={formObject.isValid === false || formObject.dirty === false} 
-              label={isLoading ? <Loading /> : "Sign Up"} color={'btnColor'} width={'w-100'} />
+              <Button type={'submit'} disable={formObject.isValid === false || formObject.dirty === false}
+                label={isLoading ? <Loading /> : "Sign Up"} color={'btnColor'} width={'w-100'} />
             </form>
           </div>
         </div>

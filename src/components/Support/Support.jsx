@@ -10,7 +10,7 @@ import { supportCarData } from '../../data'
     <>
       <div className="Support ">
         <div className="main-text  pt-5 ">
-          <h1 className="text-center position-relative">Supporter Car</h1>
+          <h1 className="text-center position-relative">Supported Cars</h1>
         </div>
         <div className="d-flex justify-content-center ">
           <div className="text-center col-lg-6  text-muted mt-2 " >
