@@ -261,12 +261,12 @@ export default function Service() {
                       <div className="mb-4">
                         {!isLoading ? <>
                           <div className="modal_descraption">
-                            {/* <span className="text-muted">{description}</span> */}
-                            <h6> Descraption: </h6>
+                            {/* */}
+                              <h6> Descraption: <span className="text-muted">{description}</span>  </h6>
                           </div>
                           <div className="modal_descraption">
-                            {/* <span className="text-muted">{cost}</span> */}
-                            <h6> Cost: </h6>
+                            {/* */}
+                              <h6> Cost: <span className="text-muted">{cost}</span>  </h6>
                           </div>
 
                         </> : ""}

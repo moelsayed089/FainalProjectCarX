@@ -43,6 +43,7 @@ export default function Blog() {
           </div>
         </div>
       </div>
+    
 
 
       {data?.data.blogs ? <div className="blog mt-3 mb-3 ">
@@ -60,12 +61,14 @@ export default function Blog() {
                       />
                     </div>
                     <div className="card-body">
-                      <h4 className="card-title blog-title fw-bold ">
-                        {item.title.split(" ").slice(0, 8).join(" ")}
-                      </h4>
-                      <p className="text-muted mb-4">
-                        {`${item.description.split(" ").slice(0, 25).join(" ") }....`}
-                      </p>
+                      
+                        <h4 className="card-title blog-title fw-bold">
+                          {item.title.split(" ").slice(0, 3).join(" ")}
+                        </h4>
+                        <p className="text-muted praaa mb-4">
+                          {`${item.description.split(" ").slice(0, 11).join(" ")}....`}
+                        </p>
+                      
                       <Link className="blog-link px-3 py-2" to={`/blogdetails/${item.id}`}>
                         Read More
                         <i className="fa-solid fa-arrow-right"></i>

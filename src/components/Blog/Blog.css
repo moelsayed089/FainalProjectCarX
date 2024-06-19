@@ -23,7 +23,15 @@
     border: 1px solid #013E6A;
     border-radius: 10px;
     text-align: center !important;
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) .5s ;
+    width: 100% !important;
+
 }
+.blog-link:hover{
+    background-color: #013E6A;
+    color: white !important;
+}
+
 .blog-link i {
     padding-left: 7px;
     font-size: 17px;
@@ -34,7 +42,6 @@
     position: absolute;
     width: 17%;
     height: 20%;
-    /* background-image: url(../../assests/dots.png); */
     background-color: var(--yellow);
     left: 50%;
     transform: translate(-50%);
@@ -48,7 +55,6 @@
         position: absolute;
         width: 70%;
         height: 20%;
-        /* background-image: url(../../assests/dots.png); */
         background-color: var(--yellow);
         left: 50%;
         transform: translate(-50%);
