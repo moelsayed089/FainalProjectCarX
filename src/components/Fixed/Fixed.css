@@ -1,64 +1,33 @@
-.fixed-span{
-    font-size: 16px !important;
+.fixed-span,
+.fixed .parg p{
+    font-size: 16px ;
 }
+
 .fixed_image{
     padding: 12px;
+    height: 400px;
+    object-fit: cover;
+    filter: blur(.5px);
 }
- .fixed_image img {
+
+.fixed h4{
+    color: var(--mainColor);
+    font-weight: bold;
+    text-decoration: underline var(--mainColor);
+}
+
+.fixed_image img {
         width: 100%;
         border-radius: 5px;
         object-fit: cover;
 }
 
-
-
-
-
-.fixed_span {
-    color: var(--yellow);
-}
-
-.blog-link {
-    color: rgb(235, 172, 0) !important;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500 !important;
-    text-align: center !important;
-    border: 1px solid #013E6A;
-    border-radius: 10px;
-    text-align: center !important;
-}
-
-.blog-link i {
-    padding-left: 7px;
-    font-size: 17px;
-}
-
-.fixed .main-text h1::after {
-    content: '';
-    position: absolute;
-    width: 30%;
-    height: 20%;
-    /* background-image: url(../../assests/dots.png); */
-    background-color: var(--yellow);
-    left: 50%;
-    transform: translate(-50%);
-    z-index: -1;
-    bottom: 13px;
-}
-
 @media (max-width: 570px) {
-    .fixed .main-text h1::after {
-        content: '';
-        position: absolute;
-        width: 70%;
-        height: 20%;
-        /* background-image: url(../../assests/dots.png); */
-        background-color: var(--yellow);
-        left: 50%;
-        transform: translate(-50%);
-        z-index: -1;
-        bottom: 13px;
+    .fixed .main-text h1{
+        font-size: 38px !important;
+    }
+    .fixed .main-parg {
+        max-width: 365px ;
     }
 }
 
