@@ -1,3 +1,9 @@
+Its web application is designed to help car owners 
+and enthusiasts diagnose and predict potential problems with their cars. 
+By harnessing the power of artificial intelligence and specialized systems,
+the platform offers a cutting-edge solution to identify vehicle problems before they become serious.
+Whether you're an experienced mechanic or a casua
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
