@@ -1,12 +1,15 @@
-.BologDetails {
-    height: 100vh !important;
-}
-@media (max-width: 576px) {
-    .BologDetails h2{
-        font-size: 22px ;
-    }
-    .BologDetails p{
-        font-size: 13px;
-    }
+.img-card img {
+    height: 75vh;
+    object-fit: cover;
+    filter: blur(2px);
+    margin-bottom: 25px;
 }
 
+.blog-info p{
+text-align: justify ;
+}
+
+.blog-info h2{
+    color: var(--mainColor); 
+    font-weight: bold;
+}

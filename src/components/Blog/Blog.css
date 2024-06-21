@@ -5,8 +5,8 @@
     height: 250px;
     border-radius: 5px;
     object-fit: cover;
-
 }
+
 .blog-title {
     color: var(--mainColor);
 }

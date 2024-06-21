@@ -7,22 +7,15 @@ import "./BologDetails.css";
 
 export default function BologDetails() {
   let { id } = useParams();
-  // console.log(id)
+ 
   function getDetailsBlog() {
     return axios.get(`http://127.0.0.1:8000/api/blogs/${id}`);
   }
   let { data,isLoading } = useQuery("blogDetails", getDetailsBlog);
-// console.log(isLoading)
-// console.log(data.data.blogs)
-// console.log(error)
-// console.log(isLoading)
+
 
 
 const blogDetails = data?.data.blogs
-
-
-
-  
 
   if (isLoading) {
     return (
@@ -43,19 +36,19 @@ const blogDetails = data?.data.blogs
   return (
     <>
       <main className="BologDetails">
-        <div className="container mt-5 ">
+        <div className="container mt-3 ">
           <div className="row p-1">
-            <div className="col-lg-5 col-md-6">
-              <div className="img-card mb-4">
+            <div className="col-lg-12 col-md-12">
+              <div className="img-card ">
                 <img
                   src={blogDetails.image}
-                  className="w-100 shadow-sm rounded-3"
+                  className="w-100 "
                   alt="iamge_symobol"
                 />
               </div>
             </div>
-            <div className="col-lg-7 col-md-12 ">
-              <div className="blog-info">
+            <div className="col-lg-12 col-md-12">
+              <div className="blog-info mt-2 ">
                 <h2 className="text- mb-2">{blogDetails.title}</h2>
                 <h5 className="text-warning">
                   Reasons for the problem to occur :
