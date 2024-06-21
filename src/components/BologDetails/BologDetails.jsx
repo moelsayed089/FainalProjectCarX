@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Puff } from "react-loader-spinner";
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./BologDetails.css";
 
 export default function BologDetails() {
@@ -62,6 +62,11 @@ const blogDetails = data?.data.blogs
                 <p className="text-muted">{blogDetails.description3}</p>
               </div>
             </div>
+
+            <Link className="BologDetails-link px-3 py-2 mb-4 mt-3 w-25 m-auto" to={'/blog'}>
+              <i className="fa-solid fa-arrow-left"></i>
+              Back To Blogs
+            </Link>
           </div>
         </div>
       </main>

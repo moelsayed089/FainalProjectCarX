@@ -182,7 +182,7 @@ export default function Service() {
           </div>
           <div className="d-flex justify-content-center ">
             <div className="text-center col-lg-6 text-muted p-2" data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-duration="400">
-              <p>
+              <p className="main-parg">
                 Predict Car Problems <span className="service_span">using AI and Expert Systems</span> is a sophisticated web application designed to assist car owners and enthusiasts in diagnosing and predicting potential issues with their vehicles. Leveraging the power of artificial intelligence and expert systems, our platform offers users a comprehensive toolset to analyze various factors such as vehicle symptoms, and environmental conditions to <span className="service_span">accurately predict potential problems.</span>
               </p>
             </div>

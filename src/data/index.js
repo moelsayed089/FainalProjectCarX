@@ -19,7 +19,7 @@ export const teamData = [
     id: 3,
     name: "Mohamed Fayed",
     deccription: "Back-End Developer",
-    imageURL: require("../assests/teams/Mohamed Fayed.jpg"),
+    imageURL: require("../assests/teams/fayed.jpg"),
   },
   {
     id: 4,

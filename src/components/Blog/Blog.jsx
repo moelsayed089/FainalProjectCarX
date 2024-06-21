@@ -37,7 +37,7 @@ export default function Blog() {
         </div>
         <div className="d-flex justify-content-center mt-2">
           <div className="text-center col-lg-6  text-muted ">
-            <p className="">
+            <p className="main-parg">
               Join our vibrant community of car enthusiasts, mechanics, and experts to share insights, ask questions, and collaborate on vehicle maintenance and repair tasks. Tap into the collective knowledge and experience of our community <span className="blod_span" >to solve problems and improve your vehicle ownership experience.</span>
             </p>
           </div>

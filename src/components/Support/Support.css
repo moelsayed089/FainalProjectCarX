@@ -3,18 +3,6 @@
 
 }
 
-/* .main-text-1 h1::after{
-        content: '';
-        position: absolute;
-        width: 20%;
-        height: 80%;
-        background-image: url(../../assests/dots.png);
-        left: 50%;
-        transform: translate(-50%);
-        z-index: -1;
-        bottom: -5px;
-} */
-
 .main-text-1 h1 {
     color: var(--mainColor);
     font-size: 55px !important;
@@ -59,34 +47,16 @@ object-fit:contain;
     font-weight: bold;
 }
 
-.Support .main-text h1::after {
-    content: '';
-    position: absolute;
-    width: 24%;
-    height: 20%;
-    /* background-image: url(../../assests/dots.png); */
-    background-color: var(--yellow);
-    left: 50%;
-    transform: translate(-50%);
-    z-index: -1;
-    bottom: 13px;
-}
+
 
 .spport_span{
     color: var(--yellow);
 }
 
 @media (max-width: 570px) {
-    .Support .main-text h1::after {
-        content: '';
-        position: absolute;
-        width: 80%;
-        height: 20%;
-        background-color: var(--yellow);
-        left: 50%;
-        transform: translate(-50%);
-        z-index: -1;
-        bottom: 13px;
+    .Support .main-text h1 {
+        font-size: 38px !important;
+            
     }
     
 }

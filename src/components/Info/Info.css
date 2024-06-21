@@ -24,19 +24,6 @@
     color: white;
 }
 
-.Services .main-text h1::after{
-        content: '';
-        position: absolute;
-        width: 33%;
-        height: 20%;
-        /* background-image: url(../../assests/dots.png); */
-        background-color: var(--yellow);
-        left: 50%;
-        transform: translate(-50%);
-        z-index: -1;
-        bottom: 13px;
-}
-
 .ser-item p {
     font-size: 15px;
     max-width: 500px;
@@ -65,17 +52,9 @@ border-radius: 5px;
                                 
                                 }
 
-                                    .Services .main-text h1::after {
-                                        content: '';
-                                        position: absolute;
-                                        width: 40%;
-                                        height: 16%;
-                                        /* background-image: url(../../assests/dots.png); */
-                                        background-color: var(--yellow);
-                                        left: 50%;
-                                        transform: translate(-50%);
-                                        z-index: -1;
-                                        bottom: 10px;
+                                    .Services .main-text h1  {
+                                        font-size: 38px !important;
+                                        line-height: 40px;
                                     }
 
 }

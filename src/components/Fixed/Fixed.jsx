@@ -44,11 +44,7 @@ export const Fixed = () => {
         </div>
 
         <div className="container">
-          <div
-            id="carouselExampleCaptions"
-            className="carousel slide"
-            data-bs-ride="false"
-          >
+          <div>
             <div className="row pt-2">
               {centerDataFixed
                 ? centerDataFixed.map((item) => (

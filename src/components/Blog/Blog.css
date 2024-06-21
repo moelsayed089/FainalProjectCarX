@@ -37,28 +37,11 @@
     font-size: 17px;
 }
 
-.blog-header .main-text h1::after {
-    content: '';
-    position: absolute;
-    width: 17%;
-    height: 20%;
-    background-color: var(--yellow);
-    left: 50%;
-    transform: translate(-50%);
-    z-index: -1;
-    bottom: 13px;
-}
-
 @media (max-width: 570px) {
-    .blog-header .main-text h1::after {
-        content: '';
-        position: absolute;
-        width: 70%;
-        height: 20%;
-        background-color: var(--yellow);
-        left: 50%;
-        transform: translate(-50%);
-        z-index: -1;
-        bottom: 13px;
-    }
+    
+
+         .blog-header .main-text h1 {
+             font-size: 38px !important;
+         }
+ 
 }

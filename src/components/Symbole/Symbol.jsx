@@ -11,7 +11,7 @@ export const Symbol = () => {
   return (
     <>
       <div className="container col-xl-9">
-        <div className="symbol-info mt-4 d-flex justify-content-center flex-column">
+        <div className="symbol-info mt-2 d-flex justify-content-center flex-column">
           <h2 className="py-3">
             What All the <span>Symbols on Your Car’s</span> <br />
             Dashboard Mean.
